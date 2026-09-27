@@ -4,7 +4,7 @@
 - Date: 27 Sep 2026
 - Browser: Chrome headless, logged out, no Vercel login
 - Viewports: 1920×1080, 1280×720, 390×844, 320×700
-- Commit: stamped in the follow-up commit once this tree is on the branch
+- Commit: eceef94bad52b29e4d3f54bb7353a7ccde40f549
 - Evidence cutoff: 27 Sep 2026, same sources as `02_RESEARCH_AND_ANALYSIS.md`
 - Screenshots: `qa-evidence/` in this repository, captured from the production URL
 
