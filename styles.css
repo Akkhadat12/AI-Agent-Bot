@@ -598,8 +598,8 @@ b { font-weight: 500; letter-spacing: 0.01em; }
   .is-in .s3-board .bridge { animation-name: growY; }
   .cost-col { width: min(220px, 80vw); }
   .tile { width: min(168px, 70vw); }
-  .s4-board { align-items: stretch; }
-  .incident { width: 100%; }
+  .s4-board { align-items: stretch; width: 100%; max-width: 100%; min-width: 0; }
+  .incident { width: 100%; max-width: 100%; min-width: 0; }
   .s5-board { align-items: center; }
   .loop { position: relative; left: auto; right: auto; top: auto; width: min(280px, 80vw); height: 72px; }
   .test { justify-self: center; }
@@ -624,7 +624,8 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scene:not(.is-in) .enter { opacity: 1; }
+  .scene:not(.is-in) .enter,
+  .is-in .enter { opacity: 1 !important; }
   .enter, .wire, .lane::after, .bridge, .gate-row::before {
     animation: none !important;
   }
