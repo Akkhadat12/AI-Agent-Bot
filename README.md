@@ -4,7 +4,7 @@
 
 **ประเด็นที่เลือก:** Agent ที่ลงมือทำงานในเครื่องมือจริงอาจสร้างคุณค่าให้ผู้ใช้และธุรกิจของผู้ให้บริการ แต่หลักฐานปัจจุบันยังไม่พอจะสรุปว่า Agent แบบอัตโนมัติคุ้มค่าในทุกอุตสาหกรรม การประเมินต้องดูผลลัพธ์ ต้นทุน การตรวจสอบ และสิทธิ์ในการทำงานแยกตามงานและกระบวนการ
 
-**สถานะ (27 ก.ย. 2026):** เว็บภาพประกอบเผยแพร่แล้วที่ [https://bots-vs-agents-2026.vercel.app](https://bots-vs-agents-2026.vercel.app) เปิดได้โดยไม่ต้องล็อกอิน หน้าแรกคือ Cover รายงานตรวจหน้าจริงอยู่ใน [07_WEB_QA_REPORT.md](07_WEB_QA_REPORT.md) เหตุผลรายฉากภาษาไทยอยู่ใน [06_SCENE_RATIONALE.docx](https://drive.google.com/file/d/1HahjYMY40tjJM_Enw7evfq1qj3V2EYm5/view)
+**สถานะ (28 ก.ย. 2026):** เว็บภาพประกอบเผยแพร่แล้วที่ [https://bots-vs-agents-2026.vercel.app](https://bots-vs-agents-2026.vercel.app) เปิดได้โดยไม่ต้องล็อกอิน หน้าแรกคือ Cover รายงานตรวจหน้าจริงอยู่ใน [07_WEB_QA_REPORT.md](07_WEB_QA_REPORT.md) เหตุผลรายฉากภาษาไทยอยู่ใน [06_SCENE_RATIONALE.docx](https://drive.google.com/file/d/1UFjSG2ywGIxevA5WIh585Tt95VAcRJ4M/view)
 
 ## เริ่มอ่านตรงไหน
 

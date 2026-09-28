@@ -4,9 +4,9 @@ Public visual aid for the narrated video. Visible copy is short English. Evidenc
 
 Production URL, no login: https://bots-vs-agents-2026.vercel.app
 
-Thai scene rationale: https://drive.google.com/file/d/1HahjYMY40tjJM_Enw7evfq1qj3V2EYm5/view
+Thai scene rationale: https://drive.google.com/file/d/1UFjSG2ywGIxevA5WIh585Tt95VAcRJ4M/view
 
-The repository stylesheet is one file, `styles.css`, and that same file is what production serves. An earlier upload split the sheet into imported chunks. A rule that hides the desktop fork was left outside its phone query, so the S1 and Closing branches disappeared above 860px. Connectors are drawn as borders in the settled frame, so a missed animation cannot leave them blank.
+The repository stylesheet is one file, `styles.css`. Production serves the same bytes as four imported parts, `p0.css`–`p3.css`, split only between complete rules. The phone query, including the rule that hides the desktop fork, sits entirely in `p3.css`. An earlier split cut that query in half, so the fork stayed hidden above 860px. Connectors are borders in the settled frame, so a missed animation cannot leave them blank.
 
 ## What shipped
 

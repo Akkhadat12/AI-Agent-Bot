@@ -1,12 +1,32 @@
 # Web QA report — published page
 
 - Production URL: https://bots-vs-agents-2026.vercel.app
-- Date: 27 Sep 2026
+- Retest date: 28 Sep 2026
 - Browser: Chrome headless, logged out, no Vercel login
-- Viewports: 1920×1080, 1280×720, 390×844, 320×700
-- Commit: eceef94bad52b29e4d3f54bb7353a7ccde40f549
+- Viewports: 1363×936 (the size in the review), 1920×1080, 390×844, 320×700
+- Commit: b882ac72af5e90543e91c64fbbcbbcdacfc099b2
+- Deployment: dpl_7mHRK368C22Ek7zTMAXrQGfWZQyZ
 - Evidence cutoff: 27 Sep 2026, same sources as `02_RESEARCH_AND_ANALYSIS.md`
-- Screenshots: `qa-evidence/` in this repository, captured from the production URL
+- Screenshots: `qa-evidence/` captured from the production URL after this deploy
+
+## What the review failed
+
+The 27 Sep pass did not hold on the published page. The review at 1363×936 recorded four failures:
+
+1. S1 and Closing lost their fork lines above 860px, and Closing objects overlapped.
+2. The S5 return was broken into segments, and the S7 path appeared to run under all four gates.
+3. The Cover and S2 crop did not show a readable “Agents API” name.
+4. The Word file had bad CRC values on three Thai items, and one gate image was incomplete.
+
+Phone width was not part of that review. This pass retested it.
+
+## What changed
+
+The fork, the S5 loop, and the S7 path are borders in the settled frame. They no longer depend on a stroke dash finishing its animation. S1 and Closing place the request and the two outcomes on a two-row grid so each branch meets the vertical center of its card. S7 draws the line through the open arches and then a short stub into the checked record. Hold stays under Escalation.
+
+The Agents plate is a new crop of the official illustration, pixels x 1640–2220 and y 820–1040, which is the column label “Agents API”. The previous crop sat below the headers and did not include that label.
+
+Production CSS is the repository `styles.css` split only between complete rules (`p0.css`–`p3.css`). The phone query that hides the desktop fork is wholly inside `p3.css`.
 
 ## Palette
 
@@ -21,21 +41,15 @@ Chosen paper direction, read from the live computed style:
 | Review | `#1F4D3A` |
 | Quiet | `#6F675C` |
 
-Titles compute as Fraunces. Harbor (`#E3E8EA` / `#0F5E5C`) remains in the stylesheet and was not selected. Comparison notes are in `BUILD_NOTES.md`.
-
-## Corrections before this pass
-
-1. The first production upload served only the opening of `styles.css` (410 bytes). Replaced by a full cascade.
-2. Splitting that cascade across imported files dropped `prefers-reduced-motion`, because the query began after a brace that belonged to the previous file. Retest after moving those rules into the parent `styles.css`: stroke dash offset `0px`, animation `none`, label opacity `1` on S1 within 40ms of the click. Screenshot: `qa-evidence/reduced-s1c.jpg`.
-3. S4 support crop is served at 560×229 so the non-paging sentence stays readable. Screenshot: `qa-evidence/d-s4.jpg`, `qa-evidence/m-s4.jpg`.
+Titles compute as Fraunces. Harbor remains in the stylesheet and was not selected.
 
 ## Facts on screen
 
-99%, 14%, and 19% are absent. S3 tiles are equal size. S5 shows a review loop and the title “Use ≠ Speed”, not a speed claim. S6 is an authored order, fields, an exception, and a separate merchant zone. S7 gates are Data, Permission, Proof, Escalation, then Hold beside the last gate. PASS.
+99%, 14%, and 19% are absent. S3 tiles are equal size. S5 shows a continuous review loop and the title “Use ≠ Speed”. S6 is an authored order, fields, an exception, and a separate merchant zone. S7 gates are Data, Permission, Proof, and Escalation. The line passes through those openings and into the checked record. Hold is a branch under Escalation.
 
-## Scene results at 1920×1080
+## Scene results at 1363×936
 
-Word counts are visible authored words. No page overflow. Click targets stay inside the viewport. Focus moved to the target after each click.
+This is the viewport the review used. Word counts are visible authored words. No page overflow. Forks computed as `display: block`. The S7 through-line computed as `display: block`.
 
 | Screen | Words | Accessible name | Result | Evidence |
 |---|---|---|---|---|
@@ -49,44 +63,39 @@ Word counts are visible authored words. No page overflow. Click targets stay ins
 | S7 | 5 — Data Permission Proof Escalation Hold | Passing task | PASS | `qa-evidence/d-s7.jpg` |
 | Closing | 4 — Payoff Is Conditional Hold | Work item | PASS | `qa-evidence/d-closing.jpg` |
 
-The 1920×1080 frame fills the viewport. Wider-than-16:9 viewports letterbox inside the stage rule. No page numbers, arrows, dots, rails, or source URLs on the stage.
+Ink samples on the production screenshots: the S1 branches run to the Answer card and the Review/Action row; the Closing branches run to the checked record and to Hold; the S7 line is continuous across the arches and into the checked record. The Agents plate on Cover and S2 is the official “Agents API” label.
+
+At 1920×1080 the S1 and Closing forks still compute as `display: block`. Wider-than-16:9 viewports letterbox. No page numbers, arrows, dots, rails, or source URLs on the stage.
 
 ## Phone
 
-390×844 screenshots: `qa-evidence/m-cover.jpg` through `m-closing.jpg`. 320×700 S1: `qa-evidence/w320-s1.jpg`.
+390×844: every scene, scroll width 390, no target or image box outside the viewport. Screenshots: `qa-evidence/m-cover.jpg` through `m-closing.jpg`.
 
-Word counts match the desktop table. Document scroll width equals the viewport on a repeat of S4 after the parent-sheet width rule. An earlier single sample reported scroll width 408 against a 390 client width and did not repeat; no element box crossed the viewport on the follow-up probe. PASS.
+320×700: Cover, S1, and S2 scroll width 320, no clipped targets. S1: `qa-evidence/w320-s1.jpg`. S2: `qa-evidence/w320-s2.jpg`.
 
-Phone keeps the same order. Cover, S1, and Closing use a vertical stem. S2 meets Tools on one rail. S7 lists the four gates then Hold and the checked record.
+On these widths the desktop fork is hidden and a vertical stem replaces it. S5 keeps a return loop. S7 lists the four gates, then Hold, then the checked record.
 
 ## Interaction
 
-Click path Cover → S1 → S2 → S3 → S4 → S5 → S6 → S7 → Closing, each focus check true. Space on Closing stays on Closing. R from Closing returns to Cover. Two Space presses during the settle land on S1, not S2. PASS.
+Click path on the published page: Cover → S1 → S2 → S3 → S4 → S5 → S6 → S7 → Closing. Space on Closing stays on Closing. R from Closing returns to Cover.
 
-Entry is a short fade and line draw, then still. Reduced motion shows the finished S1 immediately. PASS after the correction above.
+Reduced motion: S1 arm border is 2px, animation name `none`, and entered labels are opacity 1. Screenshot: `qa-evidence/reduced-s1c.jpg`.
 
 ## Assets
 
-Live responses, no login:
+Live responses, no login, after dpl_7mHRK368C22Ek7zTMAXrQGfWZQyZ:
 
-- `/` 11377 bytes, cover is the first screen
-- `/app.js` 1889 bytes
-- `/styles.css` import sheet plus the reduced-motion and phone overrides
-- `/c0.css` 3767, `/c1.css` 3787, `/c2.css` 3765, `/c3.css` 3786, `/c4.css` 686
-- `/references/grok-bot-official-cover.webp` 27946
-- `/assets/openai-agents-api-excerpt.webp` 2060
-- `/assets/grok-bot-support-excerpt.webp` 12018
-
-Grok Bot and Agents API plates are the official images. The S4 excerpt still shows the alert title and “I'm not paging anyone or creating an incident without approval.”
-
-## Console
-
-`/favicon.ico` returns 200 (124 bytes) on the final production deploy. No page JavaScript exceptions were recorded on the story pass. An earlier load, before the icon existed, logged one 404 for that file.
+- `/` 200, cover is the first screen
+- `/styles.css` imports `p0.css` through `p3.css` only
+- `/assets/openai-agents-api-excerpt.webp` 4342 bytes
+- `/assets/grok-bot-support-excerpt.webp` 12018 bytes
+- `/references/grok-bot-official-cover.webp` 27946 bytes
+- `/favicon.ico` 200, 124 bytes
 
 ## Scene rationale
 
-Thai Word file, nine screenshots and source links: https://drive.google.com/file/d/1HahjYMY40tjJM_Enw7evfq1qj3V2EYm5/view
+Replacement file: [06_SCENE_RATIONALE.docx](https://drive.google.com/file/d/1UFjSG2ywGIxevA5WIh585Tt95VAcRJ4M/view) in the owner Drive folder. Saved size is 18667 bytes. The zip CRC of every part matches the bytes. After upload, the file was downloaded again and the size matched. It has Thai scene notes, screenshots of Cover through Closing, a close-up of the Agents API label, and the original image URLs. S5 and S7 are crops of the production screenshots so the return loop and the line through the four gates stay visible. The earlier file with bad CRC values is in trash.
 
 ## Verdict
 
-PASS for the published story, interaction, 16:9 frame, phone layout, and reduced motion, after the stylesheet and support-image corrections above.
+The four review failures are fixed on the published page and retested at 1363×936, 1920×1080, 390×844, and 320×700. This report does not merge the pull request. A fresh review should confirm the page and the replacement Word file.
