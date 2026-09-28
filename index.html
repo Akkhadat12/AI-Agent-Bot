@@ -19,9 +19,7 @@
           <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
           <span class="tick empty" aria-hidden="true"></span>
         </button>
-        <svg class="wires join enter d2" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
-          <path class="wire" pathLength="1" d="M0 5 H100" />
-        </svg>
+        <div class="join-line enter d2" aria-hidden="true"></div>
         <div class="record empty enter d2" aria-hidden="true">
           <span class="punch"></span>
           <span class="lines"><i></i><i></i></span>
@@ -43,10 +41,7 @@
           <span class="lines"><i></i><i></i><i class="short"></i></span>
           <span class="tick empty"></span>
         </div>
-        <svg class="wires fork" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <path class="wire" pathLength="1" d="M0 34 C45 34, 55 22, 100 22" />
-          <path class="wire d2" pathLength="1" d="M0 58 C40 58, 50 78, 100 74" />
-        </svg>
+        <div class="fork" aria-hidden="true"><span class="arm up"></span><span class="arm down"></span></div>
         <div class="phone-branch" aria-hidden="true"></div>
         <div class="outcomes">
           <div class="draft enter d2">
@@ -150,10 +145,11 @@
           <span class="del"></span>
           <span class="add short"></span>
         </div>
-        <svg class="wires loop" viewBox="0 0 100 80" preserveAspectRatio="none" aria-hidden="true">
-          <path class="wire" pathLength="1" d="M6 28 H78 C90 28, 90 28, 90 40" />
-          <path class="wire d2" pathLength="1" d="M90 48 C90 70, 70 72, 18 72 H8" />
-        </svg>
+        <div class="loop-track" aria-hidden="true">
+          <span class="leg out"></span>
+          <span class="leg down"></span>
+          <span class="leg back"></span>
+        </div>
         <button class="test hit enter d3" type="button" data-next="s6">
           <b>Test</b>
           <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.2 18 20 6"/></svg>
@@ -193,17 +189,21 @@
     <section class="scene" data-scene="s7" hidden aria-label="Four gates">
       <div class="board s7-board">
         <div class="gate-row">
-          <div class="gate enter"><i class="arch" aria-hidden="true"></i><b>Data</b></div>
-          <div class="gate enter d2"><i class="arch" aria-hidden="true"></i><b>Permission</b></div>
-          <div class="gate enter d3"><i class="arch" aria-hidden="true"></i><b>Proof</b></div>
-          <div class="gate gate-last enter d4">
-            <i class="arch" aria-hidden="true"></i>
-            <b>Escalation</b>
-            <div class="person-pop">
-              <svg class="who" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="9"/><path d="M12 56c2-15 11-20 20-20s18 5 20 20"/></svg>
-              <b>Hold</b>
+          <div class="gates">
+            <div class="gate enter"><i class="arch" aria-hidden="true"></i><b>Data</b></div>
+            <div class="gate enter d2"><i class="arch" aria-hidden="true"></i><b>Permission</b></div>
+            <div class="gate enter d3"><i class="arch" aria-hidden="true"></i><b>Proof</b></div>
+            <div class="gate gate-last enter d4">
+              <i class="arch" aria-hidden="true"></i>
+              <b>Escalation</b>
+              <div class="person-pop">
+                <svg class="who" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="9"/><path d="M12 56c2-15 11-20 20-20s18 5 20 20"/></svg>
+                <b>Hold</b>
+              </div>
             </div>
+            <span class="through" aria-hidden="true"></span>
           </div>
+          <span class="to-pass" aria-hidden="true"></span>
           <button class="record pass hit enter d4" type="button" data-next="closing" aria-label="Passing task">
             <span class="punch" aria-hidden="true"></span>
             <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.2 18 20 6"/></svg>
@@ -219,10 +219,7 @@
           <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
           <span class="tick empty" aria-hidden="true"></span>
         </button>
-        <svg class="wires fork" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <path class="wire" pathLength="1" d="M0 36 C40 36, 60 28, 100 28" />
-          <path class="wire d2" pathLength="1" d="M0 64 C40 64, 60 76, 100 76" />
-        </svg>
+        <div class="fork" aria-hidden="true"><span class="arm up"></span><span class="arm down"></span></div>
         <div class="vlink" aria-hidden="true"></div>
         <div class="end-col">
           <div class="record done enter d2" aria-hidden="true">
@@ -237,7 +234,7 @@
       </div>
     </section>
   </div>
-  <noscript><style>.enter{opacity:1!important}.wire{stroke-dashoffset:0!important}</style></noscript>
+  <noscript><style>.enter{opacity:1!important}</style></noscript>
   <script src="app.js"></script>
 </body>
 </html>

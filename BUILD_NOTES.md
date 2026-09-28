@@ -6,7 +6,7 @@ Production URL, no login: https://bots-vs-agents-2026.vercel.app
 
 Thai scene rationale: https://drive.google.com/file/d/1HahjYMY40tjJM_Enw7evfq1qj3V2EYm5/view
 
-The repository stylesheet is one file, `styles.css`. The production host serves that same cascade as `c0.css`–`c4.css` plus a short `styles.css` that imports them and repeats the phone width constraint and the reduced-motion rules. Those two rules have to sit in the parent sheet because a media query split across imported files is dropped by the browser.
+The repository stylesheet is one file, `styles.css`, and that same file is what production serves. An earlier upload split the sheet into imported chunks. A rule that hides the desktop fork was left outside its phone query, so the S1 and Closing branches disappeared above 860px. Connectors are drawn as borders in the settled frame, so a missed animation cannot leave them blank.
 
 ## What shipped
 
@@ -50,7 +50,7 @@ Type is Fraunces for the two scene titles and Outfit for labels. Both are loaded
 Served files:
 
 - `references/grok-bot-official-cover.webp` on Cover and S2. Original: https://x.ai/images/news/introducing-grok-bot-og-2.png
-- `assets/openai-agents-api-excerpt.webp` on Cover and S2. Crop of https://images.ctfassets.net/kftzwdyauwt9/ncSx68jam4NH3CRibCtHk/9b2b8fa8ef9024a0e281814e5bb7a53c/agents-api_16x9_dark_1.png at pixels x 160–1200, y 720–900 of the 3840×2160 file. The crop keeps the official “Agents API” title intact and does not slice diagram labels into a fake product screen. The full illustration remains at `references/openai-agents-api-official.webp`.
+- `assets/openai-agents-api-excerpt.webp` on Cover and S2. Crop of https://images.ctfassets.net/kftzwdyauwt9/ncSx68jam4NH3CRibCtHk/9b2b8fa8ef9024a0e281814e5bb7a53c/agents-api_16x9_dark_1.png at pixels x 1640–2220, y 820–1040 of the 3840×2160 file. That region is the OpenAI column’s own “Agents API” label. An earlier crop (x 160–1200, y 720–900) sat below the headers and did not show the name. The full illustration remains at `references/openai-agents-api-official.webp`.
 - `assets/grok-bot-support-excerpt.webp` on S4. Crop of https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cf%3Dauto/v1/website/grok-bot-customer-support-incident-b3f2d249.webp at pixels x 180–1600, y 400–980 of the 2000×1413 file, then resized to 560×229. The excerpt keeps the alert title and the sentence that nobody is paged without approval. It is a vendor illustration, not proof of a rate. The full frame remains at `references/grok-bot-support-incident-reference.webp`.
 
 No generated scene art, official marks, faces, or product screens were added.

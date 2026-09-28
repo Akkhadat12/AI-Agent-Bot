@@ -202,7 +202,14 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 
 .plate img { width: 100%; height: auto; }
 
-.plate-api { background: #000; }
+.plate-api { background: #000; width: min(300px, 100%); }
+.plate-api img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 580 / 220;
+  object-fit: cover;
+  object-position: center;
+}
 
 .vlink, .phone-branch { display: none; }
 
@@ -217,33 +224,62 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 }
 
 .cover-board .slip { grid-column: 1; grid-row: 1; }
-.cover-board .wires { grid-column: 2; grid-row: 1; }
+.cover-board .join-line { grid-column: 2; grid-row: 1; }
 .cover-board .record { grid-column: 3; grid-row: 1; justify-self: end; }
 .cover-board .plate-grok { grid-column: 1; grid-row: 2; }
 .cover-board .plate-api { grid-column: 3; grid-row: 2; justify-self: end; }
 
-.wires { overflow: visible; }
-.wire {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.6;
-  vector-effect: non-scaling-stroke;
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
+.join-line {
+  height: 2px;
+  align-self: center;
+  background: var(--ink);
+  transform-origin: left center;
+}
+
+.fork { position: relative; min-width: 0; min-height: 0; }
+.fork .arm {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-color: var(--ink);
+  border-style: solid;
+}
+.fork .up {
+  top: 25%;
+  height: 25%;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: min(72px, 40%);
+}
+.fork .down {
+  top: 50%;
+  height: 25%;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: min(72px, 40%);
 }
 
 .s1-board {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(180px, 250px) minmax(70px, 1fr) minmax(280px, 1.3fr);
+  grid-template-columns: minmax(200px, 260px) minmax(140px, 1fr) minmax(280px, 460px);
+  grid-template-rows: 1fr 1fr;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 0;
 }
+
+.s1-board .slip { grid-column: 1; grid-row: 1 / -1; z-index: 2; }
+.s1-board .fork { grid-column: 2; grid-row: 1 / -1; }
+.s1-board .outcomes { display: contents; }
+.s1-board .draft { grid-column: 3; grid-row: 1; z-index: 2; }
+.s1-board .action-line { grid-column: 3; grid-row: 2; z-index: 2; }
 
 .outcomes { display: flex; flex-direction: column; gap: clamp(18px, 4vh, 42px); }
 .action-line { display: flex; align-items: center; gap: 16px; }
-.fork { width: 100%; height: min(420px, 70%); justify-self: center; }
+.s1-board .fork, .close-board .fork {
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  justify-self: stretch;
+}
 
 .s2-board {
   height: 100%;
@@ -270,7 +306,6 @@ b { font-weight: 500; letter-spacing: 0.01em; }
   height: 1.5px;
   background: var(--ink);
   flex: 1;
-  transform: scaleX(0);
   transform-origin: left center;
   min-width: 24px;
 }
@@ -314,14 +349,12 @@ b { font-weight: 500; letter-spacing: 0.01em; }
   height: 1.5px;
   width: 100%;
   background: var(--ink);
-  transform: scaleX(0);
   transform-origin: left center;
 }
 .bridge.v {
   width: 1.5px;
   height: 28px;
   margin-left: 27px;
-  transform: scaleY(0);
   transform-origin: top center;
 }
 
@@ -373,7 +406,8 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 }
 
 .code {
-  width: min(360px, 90%);
+  width: 100%;
+  max-width: 360px;
   min-height: 180px;
   padding: 26px 18px;
   border: 1.5px solid var(--ink);
@@ -388,18 +422,32 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 .code .del { width: 48%; opacity: 0.28; }
 .code .short { width: 34%; }
 
-.loop {
-  position: absolute;
-  left: 18%;
-  right: 8%;
-  top: 18%;
-  height: 64%;
-  width: auto;
+.s5-board {
+  grid-template-columns: minmax(220px, 360px) minmax(88px, 1fr) 160px;
+  column-gap: 0;
+}
+
+.loop-track {
+  position: relative;
+  height: 168px;
+  align-self: center;
+}
+.loop-track .leg { position: absolute; background: var(--ink); }
+.loop-track .out,
+.loop-track .back { left: 0; right: 0; height: 2px; }
+.loop-track .out { top: 18px; transform-origin: left center; }
+.loop-track .back { bottom: 18px; transform-origin: left center; }
+.loop-track .down {
+  top: 18px;
+  bottom: 18px;
+  right: 0;
+  width: 2px;
+  transform-origin: center top;
 }
 
 .test {
-  justify-self: end;
-  width: 150px;
+  justify-self: stretch;
+  width: 100%;
   min-height: 140px;
   padding: 16px;
   display: flex;
@@ -451,31 +499,45 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 
 .s7-board { height: 100%; display: grid; align-items: center; }
 .gate-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: start;
-  position: relative;
+  display: flex;
+  align-items: flex-start;
   width: 100%;
+  gap: 0;
+}
+.gates {
+  position: relative;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
 }
 .gate { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; z-index: 1; justify-self: center; }
 .arch {
   width: 72px;
   height: 78px;
-  border: 1.5px solid var(--ink);
+  border: 2px solid var(--ink);
   border-bottom: 0;
   border-radius: 40px 40px 0 0;
-  background: var(--paper);
+  background: transparent;
   display: block;
 }
-.gate-row::before {
-  content: "";
+.through {
   position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 76px;
-  height: 1.5px;
+  z-index: 0;
+  left: calc(12.5% - 36px);
+  right: 0;
+  top: 40px;
+  height: 2px;
   background: var(--ink);
-  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+.to-pass {
+  flex: none;
+  width: 36px;
+  height: 2px;
+  margin-top: 40px;
+  background: var(--ink);
   transform-origin: left center;
 }
 .person-pop {
@@ -494,24 +556,32 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 }
 .person-pop .who { width: 36px; height: 36px; }
 .record.pass {
-  align-self: start;
-  justify-self: center;
-  margin-top: 28px;
+  align-self: flex-start;
+  flex: none;
+  margin-top: -8px;
   min-width: 120px;
   min-height: 96px;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .close-board {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(180px, 250px) minmax(80px, 1fr) minmax(220px, 280px);
+  grid-template-columns: minmax(200px, 260px) minmax(140px, 1fr) minmax(220px, 280px);
+  grid-template-rows: 1fr 1fr;
   align-items: center;
+  column-gap: 0;
 }
+.close-board .slip { grid-column: 1; grid-row: 1 / -1; z-index: 2; }
+.close-board .fork { grid-column: 2; grid-row: 1 / -1; }
+.close-board .end-col { display: contents; }
+.close-board .record { grid-column: 3; grid-row: 1; z-index: 2; justify-self: start; }
+.close-board .person-card { grid-column: 3; grid-row: 2; z-index: 2; justify-self: start; }
 .end-col { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
-.person-card { display: flex; align-items: center; gap: 10px; }
+.person-card { display: flex; align-items: center; gap: 10px; background: var(--stage); }
 .person-card .who { width: 48px; height: 48px; }
-.close-board .fork { height: min(360px, 78%); }
 
 .scene:not(.is-in) .enter { opacity: 0; }
 
@@ -519,18 +589,20 @@ b { font-weight: 500; letter-spacing: 0.01em; }
 .is-in .enter.d2 { animation-delay: 90ms; }
 .is-in .enter.d3 { animation-delay: 170ms; }
 .is-in .enter.d4 { animation-delay: 250ms; }
-.is-in .wire { animation: draw 620ms ease forwards; }
-.is-in .wire.d2 { animation-delay: 160ms; }
 .is-in .lane::after { animation: growX 520ms ease forwards; }
 .is-in .lane-api::after { animation-delay: 140ms; }
 .is-in .bridge { animation: growX 480ms ease forwards; }
 .is-in .bridge.v { animation-name: growY; }
-.is-in .gate-row::before { animation: growX 700ms ease forwards; }
+.is-in .join-line,
+.is-in .through,
+.is-in .to-pass,
+.is-in .loop-track .out,
+.is-in .loop-track .back { animation: growX 620ms ease forwards; }
+.is-in .loop-track .down { animation: growY 620ms ease 80ms forwards; }
 
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-@keyframes growX { to { transform: scaleX(1); } }
-@keyframes growY { to { transform: scaleY(1); } }
+@keyframes growX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes growY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
 @media (max-width: 860px) {
   .title { font-size: clamp(30px, 9vw, 44px); }
@@ -542,16 +614,14 @@ b { font-weight: 500; letter-spacing: 0.01em; }
     gap: 14px;
     height: 100%;
   }
-  .wires.join, .wires.fork, .lane::after { display: none; }
-  .wires.loop {
-    display: block;
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    width: min(300px, 86vw);
-    height: 92px;
+  .join-line, .fork, .lane::after { display: none; }
+  .loop-track {
+    width: min(240px, 70vw);
+    height: 56px;
   }
+  .loop-track .out { top: 0; }
+  .loop-track .back { bottom: 0; }
+  .loop-track .down { top: 0; bottom: 0; }
   .phone-branch {
     display: block;
     width: 1.5px;
@@ -559,11 +629,14 @@ b { font-weight: 500; letter-spacing: 0.01em; }
     background: var(--ink);
   }
   .s1-board .outcomes {
+    display: flex;
     border-left: 1.5px solid var(--ink);
     padding-left: 16px;
     align-items: stretch;
   }
+  .s1-board .draft, .s1-board .action-line { width: 100%; }
   .close-board .end-col {
+    display: flex;
     border-left: 1.5px solid var(--ink);
     padding-left: 14px;
     width: min(280px, 88vw);
@@ -578,7 +651,6 @@ b { font-weight: 500; letter-spacing: 0.01em; }
   .s6-board .bridge {
     width: 1.5px;
     height: 18px;
-    transform: scaleY(0);
     transform-origin: top center;
   }
   .is-in .s6-board .bridge { animation-name: growY; }
@@ -591,44 +663,48 @@ b { font-weight: 500; letter-spacing: 0.01em; }
   .action-line { max-width: 100%; }
   .action-line .record { width: auto; flex: 1 1 auto; min-width: 0; }
   .s2-board .tools { min-height: 96px; width: min(220px, 80vw); flex-direction: row; align-items: center; }
-  .lane { width: 100%; max-width: 100%; }
-  .lane .plate { width: min(168px, 42vw); flex: none; }
+  .lane { width: 100%; max-width: 100%; min-width: 0; }
+  .lane b { width: 36px; }
+  .lane .who { width: 32px; height: 32px; }
+  .plate, .plate-api { width: min(240px, 78vw); }
+  .lane .plate { width: auto; max-width: 148px; flex: 1 1 auto; min-width: 0; }
   .s2-board { max-width: 100%; }
-  .s3-board .bridge { width: 1.5px; height: 18px; transform: scaleY(0); transform-origin: top center; }
+  .s3-board .bridge { width: 1.5px; height: 18px; transform-origin: top center; }
   .is-in .s3-board .bridge { animation-name: growY; }
   .cost-col { width: min(220px, 80vw); }
   .tile { width: min(168px, 70vw); }
   .s4-board { align-items: stretch; width: 100%; max-width: 100%; min-width: 0; }
   .incident { width: 100%; max-width: 100%; min-width: 0; }
   .s5-board { align-items: center; }
-  .loop { position: relative; left: auto; right: auto; top: auto; width: min(280px, 80vw); height: 72px; }
-  .test { justify-self: center; }
+  .code { width: min(280px, 86vw); }
+  .test { justify-self: center; width: min(180px, 70vw); }
   .s6-board { align-items: center; }
   .merchant-zone { border-left: 0; border-top: 1.5px dashed var(--muted); padding: 14px 0 0; height: auto; width: min(240px, 80vw); justify-content: center; }
-  .gate-row {
+  .gate-row, .gates {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+  }
+  .gate-row {
+    width: min(320px, 100%);
     padding-left: 18px;
     border-left: 1.5px solid var(--ink);
-    gap: 12px;
-    width: min(320px, 100%);
   }
-  .gate-row::before { display: none; }
+  .gates { width: 100%; }
+  .through, .to-pass { display: none; }
   .gate { flex-direction: row; min-width: 0; }
   .arch { width: 36px; height: 28px; border-radius: 18px 0 0 18px; border-bottom: 1.5px solid var(--ink); border-right: 0; }
   .person-pop { position: static; flex-direction: row; margin-left: 8px; }
   .person-pop::before { width: 16px; height: 1.5px; }
   .record.pass { margin: 0 0 0 8px; width: auto; }
-  .fork { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scene:not(.is-in) .enter,
   .is-in .enter { opacity: 1 !important; }
-  .enter, .wire, .lane::after, .bridge, .gate-row::before {
+  .enter, .lane::after, .bridge, .join-line, .through, .to-pass, .loop-track .leg {
     animation: none !important;
   }
-  .wire { stroke-dashoffset: 0 !important; }
-  .lane::after, .bridge, .gate-row::before { transform: none !important; }
+  .lane::after, .bridge, .join-line, .through, .to-pass, .loop-track .leg { transform: none !important; }
 }
