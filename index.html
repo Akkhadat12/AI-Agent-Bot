@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Agents, Why Now?</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23e9e2d6'/%3E%3Cpath d='M3 8h10' stroke='%231c1915' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <section class="scene is-in" data-scene="cover" aria-label="Cover">
+      <h1 class="title enter">Why Agents, Why Now?</h1>
+      <div class="board cover-board">
+        <button class="slip hit enter" type="button" data-next="s1" aria-label="Unfinished work request">
+          <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+          <span class="tick empty" aria-hidden="true"></span>
+        </button>
+        <div class="join-line enter d2" aria-hidden="true"></div>
+        <div class="record empty enter d2" aria-hidden="true">
+          <span class="punch"></span>
+          <span class="lines"><i></i><i></i></span>
+          <span class="tick empty"></span>
+        </div>
+        <div class="vlink" aria-hidden="true"></div>
+        <figure class="plate plate-grok enter d3">
+          <img src="references/grok-bot-official-cover.webp" alt="Grok Bot" />
+        </figure>
+        <figure class="plate plate-api enter d4">
+          <img src="assets/openai-agents-api-excerpt.webp" alt="Agents API" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s1" hidden aria-label="Answer versus action">
+      <div class="board s1-board">
+        <div class="slip enter" aria-hidden="true">
+          <span class="lines"><i></i><i></i><i class="short"></i></span>
+          <span class="tick empty"></span>
+        </div>
+        <div class="fork" aria-hidden="true"><span class="arm up"></span><span class="arm down"></span></div>
+        <div class="phone-branch" aria-hidden="true"></div>
+        <div class="outcomes">
+          <div class="draft enter d2">
+            <b>Answer</b>
+            <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+          </div>
+          <div class="action-line enter d3">
+            <span class="seal">Review</span>
+            <button class="record hit" type="button" data-next="s2">
+              <span class="punch" aria-hidden="true"></span>
+              <b>Action</b>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.2 18 20 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s2" hidden aria-label="Two product routes">
+      <div class="board s2-board">
+        <div class="lane lane-bot enter">
+          <svg class="who" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="9"/><path d="M12 56c2-15 11-20 20-20s18 5 20 20"/></svg>
+          <b>Bot</b>
+          <figure class="plate plate-grok">
+            <img src="references/grok-bot-official-cover.webp" alt="Grok Bot" />
+          </figure>
+        </div>
+        <div class="lane lane-api enter d2">
+          <svg class="who dev" viewBox="0 0 64 64" aria-hidden="true"><path d="M22 16 8 32l14 16M42 16l14 16-14 16M36 12 28 52"/></svg>
+          <b>API</b>
+          <figure class="plate plate-api">
+            <img src="assets/openai-agents-api-excerpt.webp" alt="Agents API" />
+          </figure>
+        </div>
+        <button class="tools hit enter d3" type="button" data-next="s3">
+          <svg viewBox="0 0 64 48" aria-hidden="true"><path d="M4 14h56v30H4zM4 14 14 6h36l10 8"/></svg>
+          <b>Tools</b>
+        </button>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s3" hidden aria-label="Value and cost">
+      <div class="board s3-board">
+        <div class="tile enter">
+          <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.2 18 20 6"/></svg>
+          <b>Value</b>
+        </div>
+        <i class="bridge enter d2" aria-hidden="true"></i>
+        <button class="slip hit enter" type="button" data-next="s4" aria-label="Work item">
+          <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+          <span class="tick empty" aria-hidden="true"></span>
+        </button>
+        <i class="bridge enter d2" aria-hidden="true"></i>
+        <div class="cost-col">
+          <div class="tile enter d2">
+            <svg class="chip" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="14" width="20" height="20"/><path d="M20 6v8M28 6v8M20 34v8M28 34v8M6 20h8M6 28h8M34 20h8M34 28h8"/></svg>
+            <b>Compute</b>
+          </div>
+          <div class="tile enter d3">
+            <span class="seal mini" aria-hidden="true"></span>
+            <b>Review</b>
+          </div>
+          <div class="tile enter d4">
+            <svg class="break" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30 20 14l6 10 8-16 8 22"/><path d="M6 36h36"/></svg>
+            <b>Errors</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s4" hidden aria-label="Support review">
+      <div class="board s4-board">
+        <div class="flow">
+          <div class="step enter">
+            <span class="pile" aria-hidden="true"><i></i><i></i><i></i></span>
+            <b>Queue</b>
+          </div>
+          <i class="bridge v enter d2" aria-hidden="true"></i>
+          <div class="step enter d2">
+            <svg class="mag" viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="20" r="11"/><path d="M28 28 40 40"/></svg>
+            <b>Investigate</b>
+          </div>
+          <i class="bridge v enter d3" aria-hidden="true"></i>
+          <button class="step hit enter d4" type="button" data-next="s5">
+            <span class="pennant" aria-hidden="true"></span>
+            <b>Approve</b>
+          </button>
+        </div>
+        <figure class="incident enter d3">
+          <img src="assets/grok-bot-support-excerpt.webp" alt="Slack alert from a SpaceXAI support example. The message says it is not paging anyone without approval." />
+        </figure>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s5" hidden aria-label="Use is not speed">
+      <h1 class="title enter">Use ≠ Speed</h1>
+      <div class="board s5-board">
+        <div class="code enter" aria-hidden="true">
+          <span class="add"></span>
+          <span class="add mid"></span>
+          <span class="del"></span>
+          <span class="add short"></span>
+        </div>
+        <div class="loop-track" aria-hidden="true">
+          <span class="leg out"></span>
+          <span class="leg down"></span>
+          <span class="leg back"></span>
+        </div>
+        <button class="test hit enter d3" type="button" data-next="s6">
+          <b>Test</b>
+          <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.2 18 20 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s6" hidden aria-label="Order and checkout">
+      <div class="board s6-board">
+        <div class="order enter">
+          <b>Order</b>
+          <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+        </div>
+        <i class="bridge enter d2" aria-hidden="true"></i>
+        <div class="field-wrap enter d2">
+          <button class="record fields hit" type="button" data-next="s7">
+            <b>Fields</b>
+            <span class="field" aria-hidden="true"></span>
+            <span class="field" aria-hidden="true"></span>
+            <span class="field short" aria-hidden="true"></span>
+          </button>
+          <div class="exception">
+            <span class="pennant" aria-hidden="true"></span>
+            <b>Exception</b>
+          </div>
+        </div>
+        <div class="merchant-zone enter d3">
+          <div class="merchant">
+            <span class="awning" aria-hidden="true"></span>
+            <svg class="bag" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 16h28l-2 24H12z"/><path d="M18 16v-4a6 6 0 0 1 12 0v4"/></svg>
+            <b>Merchant</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="s7" hidden aria-label="Four gates">
+      <div class="board s7-board">
+        <div class="gate-row">
+          <div class="gates">
+            <div class="gate enter"><i class="arch" aria-hidden="true"></i><b>Data</b></div>
+            <div class="gate enter d2"><i class="arch" aria-hidden="true"></i><b>Permission</b></div>
+            <div class="gate enter d3"><i class="arch" aria-hidden="true"></i><b>Proof</b></div>
+            <div class="gate gate-last enter d4">
+              <i class="arch" aria-hidden="true"></i>
+              <b>Escalation</b>
+              <div class="person-pop">
+                <svg class="who" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="9"/><path d="M12 56c2-15 11-20 20-20s18 5 20 20"/></svg>
+                <b>Hold</b>
+              </div>
+            </div>
+            <span class="through" aria-hidden="true"></span>
+          </div>
+          <span class="to-pass" aria-hidden="true"></span>
+          <button class="record pass hit enter d4" type="button" data-next="closing" aria-label="Passing task">
+            <span class="punch" aria-hidden="true"></span>
+            <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.2 18 20 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="closing" hidden aria-label="Conditional payoff">
+      <h1 class="title enter">Payoff Is Conditional</h1>
+      <div class="board close-board">
+        <button class="slip hit enter" type="button" data-next="cover" aria-label="Work item">
+          <span class="lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+          <span class="tick empty" aria-hidden="true"></span>
+        </button>
+        <div class="fork" aria-hidden="true"><span class="arm up"></span><span class="arm down"></span></div>
+        <div class="vlink" aria-hidden="true"></div>
+        <div class="end-col">
+          <div class="record done enter d2" aria-hidden="true">
+            <span class="punch"></span>
+            <svg class="check" viewBox="0 0 24 24"><path d="M4 12.5 9.2 18 20 6"/></svg>
+          </div>
+          <div class="person-card enter d3">
+            <svg class="who" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="9"/><path d="M12 56c2-15 11-20 20-20s18 5 20 20"/></svg>
+            <b>Hold</b>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <noscript><style>.enter{opacity:1!important}</style></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
