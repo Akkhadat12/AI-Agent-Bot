@@ -1,27 +1,30 @@
-# Agent Bot × AI Supply Chain — งานวิจัยรอบใหม่
+# Start here — Web Build agent
 
-หัวข้อที่เจ้าของงานเลือก: ผลของ Agent Bot ต่อ **ห่วงโซ่มูลค่า AI ทั้งระบบ** โดยเจาะโครงสร้างพื้นฐาน ได้แก่ ชิป คลาวด์ ดาต้าเซ็นเตอร์ เครือข่าย และพลังงาน
+This branch contains the **new Agent Bot × AI Supply Chain assignment**: completed agent tasks, their full cost, their effect on AI infrastructure, and control of task intake and routing. The owner-approved main thesis asks whether growth in completed tasks outruns falling cost per task; control of the entry point, data, and permissions is the supporting lens. Research and planning are complete. **No new website has been built or deployed for this assignment.**
 
-**Repository:** https://github.com/Akkhadat12/AI-Agent-Bot  
-**Working branch:** [`agent-bot-ai-supply-chain-2026`](https://github.com/Akkhadat12/AI-Agent-Bot/tree/agent-bot-ai-supply-chain-2026)  
-**สถานะงานล่าสุด:** [WORKFLOW_STATUS.md](WORKFLOW_STATUS.md)  
-**โฟลเดอร์สำหรับอ่าน PDF บน Google Drive:** [AI Agent Bot x AI Supply Chain — 2026-09-29](https://drive.google.com/drive/folders/1CBG-OOusgdXWSvLjtT3cMSCJx0yCTYU9)
+- **Repository:** [Akkhadat12/AI-Agent-Bot](https://github.com/Akkhadat12/AI-Agent-Bot)
+- **Exact working branch:** [`agent-bot-ai-supply-chain-2026`](https://github.com/Akkhadat12/AI-Agent-Bot/tree/agent-bot-ai-supply-chain-2026)
+- **Current stage and next actor:** [WORKFLOW_STATUS.md](WORKFLOW_STATUS.md)
+- **Owner reading and eventual scene-rationale folder:** [Google Drive](https://drive.google.com/drive/folders/1CBG-OOusgdXWSvLjtT3cMSCJx0yCTYU9)
 
-## อ่านตามลำดับ
+Read the full [04_BUILD_WEB.md](04_BUILD_WEB.md) for the actual build requirements and Interaction Map. Use [03_STORY_STRUCTURE.md](03_STORY_STRUCTURE.md) for the eight-place narrative and timing, Thai [02_RESEARCH_AND_ANALYSIS.md](02_RESEARCH_AND_ANALYSIS.md) and [01_KNOWLEDGE_SUMMARY.md](01_KNOWLEDGE_SUMMARY.md) for evidence, [05_QA.md](05_QA.md) for acceptance, and `references/` for selected authentic images and chart data. The numbered reading PDFs are mobile copies for the owner; Markdown is authoritative.
 
-1. [01_KNOWLEDGE_SUMMARY.md](01_KNOWLEDGE_SUMMARY.md) · [PDF](01_KNOWLEDGE_SUMMARY.pdf) — พื้นฐานและภาพรวม
-2. [02_RESEARCH_AND_ANALYSIS.md](02_RESEARCH_AND_ANALYSIS.md) · [PDF](02_RESEARCH_AND_ANALYSIS.pdf) — วิธีตรวจหลักฐาน ข้อโต้แย้ง ฉากทัศน์ และ claim ledger
+## Current numbered documents
 
-Markdown เป็นเนื้อหาหลักที่แก้ไขได้ PDF เป็นสำเนาสำหรับอ่านบนโทรศัพท์ ชุดอ่านยังไม่ใช่ thesis ที่เจ้าของงานอนุมัติ หลังเจ้าของงานเลือกทิศทางเรื่องเล่า ผู้วิจัยจะอัปเดต `02` คู่เดิมและเพิ่ม `03_STORY_STRUCTURE.md`, `04_BUILD_WEB.md`, `05_QA.md` และภาพอ้างอิงจริงที่จำเป็นใน `references/` บน branch นี้
+1. [01_KNOWLEDGE_SUMMARY.md](01_KNOWLEDGE_SUMMARY.md) · [01_KNOWLEDGE_SUMMARY.pdf](01_KNOWLEDGE_SUMMARY.pdf) — Thai foundations and scope.
+2. [02_RESEARCH_AND_ANALYSIS.md](02_RESEARCH_AND_ANALYSIS.md) · [02_RESEARCH_AND_ANALYSIS.pdf](02_RESEARCH_AND_ANALYSIS.pdf) — Thai evidence, limits, scenarios, claim ledger, and approved thesis.
+3. [03_STORY_STRUCTURE.md](03_STORY_STRUCTURE.md) — approved question, source-linked beats, spatial arc, and estimated narration.
+4. [04_BUILD_WEB.md](04_BUILD_WEB.md) — self-contained site, asset, scene, interaction, delivery, and deployment brief.
+5. [05_QA.md](05_QA.md) — scene-specific acceptance and twelve review perspectives.
 
-**PDF บน Drive:** [ชุด 01](https://drive.google.com/file/d/1bRq4x7m5mo8UE1IAxu4Z16eatAm60LK4/view?usp=drivesdk) · [ชุด 02](https://drive.google.com/file/d/16SeZDykKJ0cQb3l3Qokgx3zP5agkqF7I/view?usp=drivesdk)
+**Source package:** [NVIDIA GB200 NVL72 rack](references/nvidia-gb200-nvl72-rack.png) · [Google TPU 8i board](references/google-tpu-8i-board.jpg) · [IEA electricity chart data](references/iea-data-centre-electricity-2025-2030.csv). Original URLs, role, and factual limits are in [04](04_BUILD_WEB.md). Owner reading PDFs are also in [Drive](https://drive.google.com/drive/folders/1CBG-OOusgdXWSvLjtT3cMSCJx0yCTYU9): [01](https://drive.google.com/file/d/1bRq4x7m5mo8UE1IAxu4Z16eatAm60LK4/view) · [02](https://drive.google.com/file/d/16SeZDykKJ0cQb3l3Qokgx3zP5agkqF7I/view).
 
-## สถานะของงานเก่าใน repository
+## Build and delivery
 
-Repository นี้เคยใช้สำหรับเรื่อง Agent Bot อีกหัวข้อหนึ่ง งานเดิมอยู่ในประวัติ `main` และมีเว็บเก่าบน branch `cursor/agent-bot-web-7739` ที่รายงาน URL `https://bots-vs-agents-2026.vercel.app` การเปิด branch ใหม่นี้และแทนเอกสารเก่าเฉพาะ branch ใหม่นี้ช่วยไม่ให้ข้อมูลเรื่องเก่าถูกเข้าใจว่าเป็นหลักฐานหรือบรีฟปัจจุบัน **URL เว็บเก่าไม่ใช่เว็บของงานวิจัยใหม่นี้**
+Work on this exact branch. Implement a 16:9 presenter-controlled 3D journey with purposeful motion and stable hold states; Space advances, R resets, and meaningful visible scene objects follow the main route. Preserve the evidence and real-image boundaries. Compare two visual color directions in the browser, then record the actual selected palette in `BUILD_NOTES.md`. Deploy the new site to a **public Vercel production URL**, record the exact URL and deployed commit, and deliver one Thai scene-rationale document with actual final scene screenshots to the linked Drive folder, as a Google Doc titled `06_SCENE_RATIONALE` or a Word file named `06_SCENE_RATIONALE.docx`. Return its exact link. QA then produces `07_WEB_QA_REPORT.md` in this repository, with screenshot evidence and finding IDs.
 
-## งานขั้นถัดไป
+The reported old URL `https://bots-vs-agents-2026.vercel.app` and the old `cursor/agent-bot-web-7739` branch belong to a previous topic. They are **not** the build or evidence for this assignment.
 
-เจ้าของงานอ่านชุด `01` และ `02` แล้วเลือกหรือปรับ narrative thesis จากตัวเลือกที่ผู้วิจัยเสนอ หลังจากนั้นผู้วิจัยคนเดิมจะทำโครงเรื่องและเอกสารส่งต่อให้ผู้สร้างเว็บและผู้ตรวจ QA ขั้นเว็บยังไม่เริ่มใน assignment นี้
+## Agent communication and next handoff
 
-เมื่อมีเอกสารส่งต่อครบ Agent 2 ต้องเริ่มจาก README และสถานะที่ commit ล่าสุดของ branch นี้ อ่าน `04_BUILD_WEB.md` และ `05_QA.md` ทั้งฉบับ แล้วทำงานต่อบน branch เดียวกัน เว็บใหม่ต้องเผยแพร่บน Vercel เป็น production URL สาธารณะ พร้อมบันทึกการสร้าง `BUILD_NOTES.md`, เอกสารเหตุผลของฉากภาษาไทยบน Drive และผลตรวจ `07_WEB_QA_REPORT.md` การสื่อสารระหว่าง Build และ QA ใช้ไฟล์บน branch เดียวกันตาม [WORKFLOW_STATUS.md](WORKFLOW_STATUS.md)
+The shared branch and committed files are the communication channel. Build updates [WORKFLOW_STATUS.md](WORKFLOW_STATUS.md), records the public URL and deployed commit in `BUILD_NOTES.md`, and sets `READY_FOR_QA` before QA starts. QA records findings and a report link in `07_WEB_QA_REPORT.md`; Build responds with fix commits and a new production check; QA retests the fixes and affected scenes. The owner can start each later agent with the exact branch link above; detailed findings belong in committed files. Sign-off follows [05_QA.md](05_QA.md).
