@@ -639,7 +639,14 @@ targetButton('Grid connection<span class="arrow" aria-hidden="true">↑</span>',
 /* --- S6: permission gate and possible compute routes --- */
 const S6Y = 13;
 // Faint self-glow keeps the underside from reading as a black hole while the camera rises past it.
-far.add(box(17, 0.2, 14, mat(P.platform, { emissive: P.platform, emissiveIntensity: 0.9 }), V(36.5, S6Y - 0.1, -41)));
+far.add(box(17, 1.2, 14, mat(P.platform, { emissive: P.platform, emissiveIntensity: 0.9 }), V(36.5, S6Y - 0.6, -41)));
+// Support tower under the platform's front corner: the riser climbs it, so the
+// S5 -> S6 ascent always has a solid subject in view (QA-002).
+const tower = new THREE.Group();
+tower.position.set(48.2, 0, -40.2);
+tower.add(box(1.6, 21.2, 1.6, structMat, V(0, 2.1, 0)));
+for (let y = -7; y <= 11; y += 3) tower.add(box(1.9, 0.14, 1.9, mat(P.line), V(0, y, 0)));
+far.add(tower);
 const token = box(1.25, 1.7, 0.07, new THREE.MeshStandardMaterial({ map: record.material[4].map, roughness: 0.9 }), V(27.8, S6Y + 1.25, -40));
 token.rotation.y = 0.35;
 const tokenStand = box(0.7, 0.3, 0.4, structMat, V(27.8, S6Y + 0.15, -40));
@@ -681,10 +688,20 @@ const routes = [
   tube([V(35.8, S6Y + 0.35, -40), V(38.4, S6Y + 0.35, -40.2), V(40.5, S6Y + 0.35, -40.3)], 0.05, lineMat),
   tube([V(35.6, S6Y + 0.35, -39.6), V(37.8, S6Y + 0.35, -36.6), V(39.8, S6Y + 0.35, -35.3)], 0.05, lineMat),
 ];
-far.add(approved, ...routes);
+// A riser from the grid pylon up to the task owner's gate: the S5 -> S6 camera
+// follows it, so the climb always has a subject (QA-002).
+const riserMat = mat(P.accent, { roughness: 0.45 });
+const riser = tube(
+  [V(45.3, -2.1, -38.6), V(46.6, -0.6, -39.3), V(47.4, 3, -39.4), V(47.4, 11.6, -39.4), V(46.2, 13.12, -37.2), V(43, 13.12, -34.1), V(41.5, 13.12, -33.8), V(34, 13.12, -33.9), V(29, 13.2, -37.2), V(28.5, S6Y + 0.35, -39.6)],
+  0.07, riserMat,
+);
+far.add(approved, ...routes, riser);
 addTarget('S6', approved, junction, lock);
 
 reveal.S6 = (p) => {
+  grow(riser, easeOut(window01(p, 0, 0.55)));
+  // Once the task reaches the gate, the riser steps back to a neutral trace.
+  riserMat.color.setHex(P.accent).lerp(new THREE.Color(P.line), easeInOut(window01(p, 0.7, 1)));
   const q = easeInOut(window01(p, 0.1, 0.6));
   token.position.x = 25.8 + 2 * q;
   tokenStand.position.x = token.position.x;
@@ -707,7 +724,7 @@ const Z = DZ;
 const trace = tube(
   [
     V(0.2, -2.9, 0.1), V(0.2, -8.0, -1.6), V(0.2, -8.0, -12.6), V(4, -7.2, -26.2), V(9, -9.0, -38.8 + Z),
-    V(21.5, -4.9, -39.4 + Z), V(40.2, -8.0, -38.1 + Z), V(43.3, -6.0, -38.2 + Z), V(33, 13.4, -40 + Z), V(16, 12, -26),
+    V(21.5, -4.9, -39.4 + Z), V(40.2, -8.0, -38.1 + Z), V(43.3, -6.0, -38.2 + Z), V(47.4, 4, -39.4 + Z), V(43, 13.2, -34.1 + Z), V(33, 13.4, -40 + Z), V(16, 12, -26),
     V(3.2, 3.4, -3.4), V(1.1, 2.15, -0.25),
   ],
   0.035, traceMat,
@@ -746,7 +763,9 @@ const VIA = {
   S3: [V(11.5, -4.2, -14), V(12, -4.6, -25), V(8.6, -4.4, -16)],
   S4: [V(10, -3.2, -18.5)],
   S5: [V(27, -3.4, -32)],
-  S6: [V(41, 4, -30), V(37, 17, -27)],
+  // Stay in front of the S6 platform (its front edge is z = -48) and below it only
+  // while looking down the grid line; rise above its height before turning to the gate.
+  S6: [V(43, 2, -28), V(42, 13.5, -25), V(35, 18, -27)],
   E0: [V(20, 21, -18), V(9, 12, 8)],
 };
 // Photos are full strength where they carry the scene, dimmed elsewhere.
@@ -757,6 +776,13 @@ const PHOTO_DIM = {
 function photoDim(mesh, v) {
   mesh.material.color.setScalar(v);
 }
+// Optional look-at paths. Without one, the look-at point moves straight between shots.
+const TARGET_VIA = {
+  // Follow the grid line up the pylon, then the platform's top surface (QA-002).
+  S6: [V(46.5, -1, -53), V(47.4, 7.5, -53.4), V(44, 12.5, -51), V(37, 13.5, -53)],
+};
+// In reduced motion these moves keep their (unobstructed) path, only faster.
+const RM_KEEPS_PATH = new Set(['S6']);
 const DURATION = { S1: 2300, S2: 2800, S3: 4200, S4: 3000, S5: 2900, S6: 3000, E0: 3800 };
 
 let cur = 0;
@@ -785,7 +811,11 @@ function goTo(i) {
   const from = { pos: camera.position.clone(), target: camTarget.clone() };
   const shot = SHOTS[id];
   const rm = reducedMotion.matches;
-  const via = rm ? [] : VIA[id] || [];
+  const keepPath = !rm || RM_KEEPS_PATH.has(id);
+  const via = keepPath ? VIA[id] || [] : [];
+  const tvia = keepPath ? TARGET_VIA[id] : null;
+  const targetCurve = tvia ? new THREE.CatmullRomCurve3([from.target, ...tvia, shot.target], false, 'centripetal') : null;
+  const lookAt = (e) => (targetCurve ? camTarget.copy(targetCurve.getPoint(e)) : camTarget.lerpVectors(from.target, shot.target, e));
   const posCurve = new THREE.CatmullRomCurve3([from.pos, ...via, shot.pos], false, 'centripetal');
   const leaving = ORDER[cur];
   beginDeparture(leaving);
@@ -808,7 +838,7 @@ function goTo(i) {
     play(650, (t) => {
       const e = easeInOut(t);
       camera.position.copy(posCurve.getPoint(e));
-      camTarget.lerpVectors(from.target, shot.target, e);
+      lookAt(e);
       camera.lookAt(camTarget);
       dims(e);
       depart(t);
@@ -818,7 +848,7 @@ function goTo(i) {
   play(DURATION[id] || 2600, (t) => {
     const e = easeInOut(t);
     camera.position.copy(posCurve.getPoint(e));
-    camTarget.lerpVectors(from.target, shot.target, easeInOut(window01(t, 0, 0.85)));
+    lookAt(targetCurve ? e : easeInOut(window01(t, 0, 0.85)));
     camera.lookAt(camTarget);
     reveal[id](window01(t, 0.25, 1));
     dims(e);
