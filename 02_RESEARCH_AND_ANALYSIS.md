@@ -1,153 +1,208 @@
-# วิจัยและวิเคราะห์: การแข่งขันสร้าง Agent Bot กับงานที่ได้ประโยชน์จริง
+# Agent Bot × AI Supply Chain: หลักฐาน กลไก และทางแยก
 
-**แกนเรื่องที่เจ้าของงานเลือกแล้ว: ทางเลือก 3 | ขอบเขต A+C | ตรวจแหล่งข้อมูลถึง 27 กันยายน 2026**  
-**คำถามวิจัย 1:** อะไรเป็นเหตุเชิงเทคนิคและธุรกิจให้บริษัท AI ออกผลิตภัณฑ์ agent?  
-**คำถามวิจัย 2:** ในงานและอุตสาหกรรมใดมีหลักฐานใช้งานและผลลัพธ์ และหลักฐานนั้นแข็งแรงแค่ไหน?
+**ชุดอ่าน 02 — วิจัยและวิเคราะห์เชิงลึก**  
+**โจทย์:** การแข่งขัน Agent เปลี่ยนตำแหน่งการเก็บมูลค่าใน AI อย่างไร และส่งผ่านไปยังชิป คลาวด์ ดาต้าเซ็นเตอร์ เครือข่าย และพลังงานเพียงใด  
+**ตรวจหลักฐานถึง:** 29 กันยายน 2026  
+**สถานะ:** ก่อนเลือก narrative thesis; ยังไม่มีข้อสรุปเรื่องผู้ชนะหรือคำแนะนำลงทุน
 
-เจ้าของงานเลือกแกนเรื่อง 3 หลังอ่านชุดวิจัย: **“ทำไมบริษัทเร่งสร้างบอต ทั้งที่ยังไม่คุ้มทุกงาน”** โครงเรื่องและจำนวนฉากอยู่ใน `03_STORY_STRUCTURE.md` ข้อเท็จจริงและข้อจำกัดในเอกสารนี้ยังคงเป็นหลักฐาน ไม่เปลี่ยนเพื่อให้เข้ากับแกนเรื่อง
+## วิธีอ่านและวิธีตรวจ
 
-## 1. คำนิยามและเกณฑ์อ่านหลักฐาน
+ป้าย **[ข้อเท็จจริง]** หมายถึงข้อมูลที่แหล่งต้นทางบันทึกไว้; **[คำกล่าวผู้ขาย]** คือข้อมูลที่บริษัทเผยแพร่เกี่ยวกับตน ซึ่งตรวจขอบเขตและแรงจูงใจด้วย; **[วิเคราะห์]** คือเหตุผลที่อนุมานจากหลักฐาน; **[ฉากทัศน์]** คือสิ่งที่อาจเกิดขึ้นภายใต้เงื่อนไข ไม่ใช่คำพยากรณ์
 
-**ข้อเท็จจริง:** ผลิตภัณฑ์ที่เรียก agent มีความสามารถต่างกัน ตั้งแต่เรียกเครื่องมือหนึ่งครั้ง สร้างงานเอกสาร ไปจนถึงทำงานข้ามแอปต่อเนื่องหลายชั่วโมง จึงควรระบุ **งานที่ทำ**, **สิทธิ์เข้าถึง**, **จุดให้คนอนุมัติ**, **ผลลัพธ์ที่ตรวจได้** มากกว่าถกชื่อสินค้า [OpenAI Agents API](https://openai.com/index/introducing-the-agents-api/) · [Grok Bot](https://x.ai/news/introducing-grok-bot)
+ใช้เอกสารผลิตภัณฑ์ของ OpenAI, Anthropic, Google, AWS, Microsoft และ SpaceXAI เพื่อตรวจ **สิ่งที่เปิดตัว**; ใช้ข้อมูลผู้ใช้งานของ Anthropic และงานประเมินอิสระของ METR เพื่อตรวจ **รูปแบบการใช้กับขีดจำกัด**; ใช้ IEA, ผลประกอบการ NVIDIA และเอกสารเทคโนโลยี Google/TSMC เพื่อตรวจ **โครงสร้างพื้นฐาน** แหล่งเหล่านี้ตอบคนละคำถาม จึงไม่เอาตัวเลขต่างชนิดมาเปรียบเป็นแท่งเดียวกัน
 
-**วิธีประเมิน:** แยก (ก) ประกาศหรือ beta, (ข) ตัวอย่างภายในบริษัท, (ค) ตัวเลขจากลูกค้าหรือผู้ขาย, (ง) การศึกษาเชิงสังเกต, (จ) การทดลองที่มีกลุ่มเปรียบเทียบ ผลระดับ (ก) ยืนยันว่ามีสินค้า แต่ไม่ยืนยัน ROI; ผลระดับ (ค) ยืนยันได้เพียงสิ่งที่ผู้รายงานกล่าว; ผลระดับ (จ) ให้หลักฐานเชิงเหตุและผลดีกว่าในประชากรและช่วงเวลาที่ศึกษา แต่ไม่ควรขยายผลเป็นทุกอุตสาหกรรม
+ตัวเลขยอดขายชิปหรือไฟฟ้าของดาต้าเซ็นเตอร์ **ไม่สามารถระบุผลเชิงสาเหตุจาก Agent โดยเฉพาะ** เพราะยังรวมการฝึกโมเดล, chatbot, วิดีโอ, search และงาน AI อื่น ๆ งานวิจัยใช้ช่วงเวลาและตัวอย่างต่างกัน อ่านวันที่เผยแพร่และช่วงเวลาวัดแยกกันเสมอ
 
-**ตัวชี้วัดที่ควรใช้:** เวลาต่องานรวมการตรวจและแก้, อัตรางานสำเร็จในระบบปลายทาง, ความผิดพลาด/การคืนงาน, ความพึงพอใจลูกค้า, จำนวนกรณีส่งให้คน, ต้นทุนโทเคน+เครื่องมือ+การกำกับ, ผลลัพธ์ทางธุรกิจที่วัดได้ เปอร์เซ็นต์ข้อความที่ AI เขียนหรือโทเคนที่ใช้ไม่ใช่ตัวแทนของกำไร [OpenAI: business value](https://openai.com/index/how-to-connect-ai-usage-to-business-value/)
+## 1. ลำดับเหตุการณ์ที่เกี่ยวข้อง
 
-## 2. ลำดับหลักฐานและคำอธิบายข่าวล่าสุด
+- **2025:** OpenAI เปิด Responses API, เครื่องมือ computer use และ Agents SDK ให้ผู้พัฒนาประกอบ Agent; สิ่งนี้เป็นโครงสร้างพื้นฐานสำหรับ Agent ไม่ใช่หลักฐาน ROI ของลูกค้าทุกประเภท [OpenAI, 11 มี.ค. 2025](https://openai.com/index/new-tools-for-building-agents/)
+- **ม.ค.–เม.ย. 2026:** Anthropic ขยายผลิตภัณฑ์ Claude Code/Cowork; Google ประกาศ TPU 8i สำหรับ inference และ AWS เพิ่ม managed harness ให้ AgentCore; Microsoft ประกาศ Agent 365 เป็นชั้นกำกับดูแล [Anthropic, 13 ม.ค.](https://www.anthropic.com/news/introducing-anthropic-labs) · [Google, 22 เม.ย.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/) · [AWS, 22 เม.ย.](https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/) · [Microsoft, 9 มี.ค.](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/)
+- **พ.ค.–ก.ย. 2026:** Google เปิด Managed Agents; SpaceXAI เปิด Grok Bot beta; OpenAI เปิด Agents API public beta การเปิดตัวไม่เท่ากับส่วนแบ่งตลาดหรือการใช้งานเชิงพาณิชย์ในระดับเดียวกัน [Google, 19 พ.ค.](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/) · [SpaceXAI, 11 ส.ค.](https://x.ai/news/introducing-grok-bot) · [OpenAI, 10 ก.ย.](https://openai.com/index/introducing-the-agents-api/)
+- **2026:** IEA อัปเดตมุมมองพลังงานและข้อจำกัดในการขยายดาต้าเซ็นเตอร์ โดยให้กรณีกลางถึงปี 2030 ไม่ใช่การทำนายเฉพาะ Agent [IEA](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
 
-- **17 ก.ค. 2025:** OpenAI เปิด ChatGPT agent ให้ใช้เว็บและเครื่องมือ ลงมือในงานจริง แต่หน้าเปิดตัวปัจจุบันระบุว่าเป็นข้อมูลเก่า ใช้เพื่ออ้างลำดับเวลาเท่านั้น [OpenAI](https://openai.com/index/introducing-chatgpt-agent/)
-- **11 ส.ค. 2026:** SpaceXAI เปิด Grok Bot beta: บอตหลายตัว คอมพิวเตอร์คลาวด์ ความจำและงานข้ามแอป อ้างตัวอย่างภายในบริษัท [SpaceXAI](https://x.ai/news/introducing-grok-bot)
-- **26 ส.ค. 2026:** ขยายสิทธิ์ Grok Bot ไปยัง SuperGrok, Cursor Pro และ Cursor Teams; โควตา Bot แยกจากแผนอื่นตามคำประกาศ [SpaceXAI](https://x.ai/news/grok-bot-more-plans)
-- **10 ก.ย. 2026:** OpenAI เปิด **Agents API public beta** ให้นักพัฒนาใช้ harness และระบบจัดการงาน agent ต่อเนื่อง รวมการประสานงาน subagents สภาพแวดล้อมอาจเป็น OpenAI hosted หรือของผู้พัฒนาเอง บริษัทระบุว่าไม่มีค่าธรรมเนียม Agents API เพิ่มจากการใช้โทเคนและเครื่องมือ [OpenAI](https://openai.com/index/introducing-the-agents-api/)
-- **10 ก.ย. 2026:** OpenAI เปิด **Data agent** สำหรับเชื่อมข้อมูลบริษัท วิเคราะห์ และสร้าง dashboard เป็นผลิตภัณฑ์สำหรับงานข้อมูล ไม่ใช่สิ่งเดียวกับ API ข้างต้น [OpenAI](https://openai.com/index/put-data-to-work/)
-- **16 ก.ย. 2026:** OpenAI เผยวิธีดูการใช้ AI และเชื่อมกับผลลัพธ์ทางธุรกิจ ระบุว่าการใช้และค่าใช้จ่ายบอกได้เพียงส่วนหนึ่ง ต้องตรวจคุณภาพและผลลัพธ์จริง [OpenAI](https://openai.com/index/how-to-connect-ai-usage-to-business-value/)
-- **22 ก.ย. 2026:** SpaceXAI เผยกรณีการใช้ Grok Bot ในฝ่ายบริการลูกค้าตนเอง รวมการสืบปัญหา แก้ refund และวิเคราะห์เสียงลูกค้า เป็นรายงานของผู้ขายเอง [SpaceXAI](https://x.ai/news/grok-bot-customer-support)
+## 2. กลไกเศรษฐศาสตร์: จากงานของคนไปสู่การใช้เครื่อง
 
-**ความไม่แน่นอนเกี่ยวกับคำว่า “ข่าว OpenAI ล่าสุด”:** ผู้ใช้ไม่ได้ระบุพาดหัวข่าวใดโดยเฉพาะ เอกสารนี้ใช้ประกาศ Agents API, Data agent และเครื่องมือวัดผลในเดือนกันยายนเป็นกรณีศึกษาที่ตรวจยืนยันได้ ไม่อ้างว่า OpenAI เปิด “Grok Bot รุ่นของตน” ในวันเดียวกัน หากมีข่าวอีกชิ้นที่ผู้ใช้หมายถึง ต้องตรวจเพิ่มก่อนเขียนฉาก
+### อุปสงค์ที่ต้องแยกเป็นสี่ตัวแปร
 
-## 3. กลไกเศรษฐศาสตร์: ทำแล้วได้อะไร
+**[วิเคราะห์]** งาน Agent 1 งานอาจเรียกโมเดลหลายรอบและใช้ sandbox/เครื่องมือ แต่จำนวนงานที่ทำจริงก็ขึ้นกับราคา คุณภาพ ความเชื่อใจ และสิทธิ์เข้าถึงระบบ ตัวแปรหลักคือ:
 
-### 3.1 ผู้ใช้และลูกค้าองค์กร
+> งานที่ต้องใช้ compute = จำนวนผู้ใช้ × งานที่มอบหมายต่อคน × รอบการทำงานต่อหนึ่งงาน × compute ต่อรอบ
 
-**ข้อเท็จจริง:** เครื่องมือในตัวอย่าง Grok Bot ลงข้อมูล CRM สืบจาก Datadog/Linear และสร้าง ticket; Agents API จัดการบริบท สภาพแวดล้อม และเครื่องมือเพื่อให้นักพัฒนาเชื่อมงานจริง [Grok Bot](https://x.ai/news/introducing-grok-bot) · [บริการลูกค้า](https://x.ai/news/grok-bot-customer-support) · [Agents API](https://openai.com/index/introducing-the-agents-api/)
+จากนั้นหักผลของ model routing, โมเดลเล็ก, caching, batching, ชิปใหม่ และซอฟต์แวร์เสิร์ฟโมเดลที่ทำให้แต่ละรอบถูกลง สมการนี้เป็นแผนที่สาเหตุ ไม่ใช่สูตรประมาณยอดขายอย่างแม่นยำ [Google: โครงสร้างชิป inference](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/) · [OpenAI: ต้นทุนต่อผลลัพธ์](https://openai.com/index/managing-ai-investments-in-agentic-era/)
 
-**การวิเคราะห์:** ประโยชน์จะเกิดเมื่อ “งานจบในระบบ” ด้วยต้นทุนรวมต่ำกว่าวิธีเดิม โดยยังคงคุณภาพและความรับผิดชอบ ตัวอย่างประเมิน: งานหนึ่งใช้คน 40 นาที เดิม; หลังใช้ bot คนตรวจ 10 นาที + ค่า AI + เวลาตามแก้ข้อผิดพลาด ถ้าการตามแก้เพิ่มขึ้น 35 นาที งานนั้นไม่ประหยัดจริง ตัวเลข 40/10/35 เป็นเพียงสมมติฐานอธิบายวิธีคิด ไม่ใช่ข้อมูลที่วัดมา
+Anthropic พบว่า output ที่มีระดับการมอบอิสระสูงมีการใช้ token มากขึ้น (สหสัมพันธ์ r = 0.68 ในชุด chat/Cowork) และ Claude Code มีระดับ autonomy มากกว่า chat/Cowork แม้เทียบโมเดลเดียวกัน **นี่เป็นความสัมพันธ์ภายในผลิตภัณฑ์ ไม่ใช่เหตุและผลทั่วตลาด** อีกทั้งนับ token ไม่รวมต้นทุนคนตรวจหรือมูลค่าของงานที่เสร็จ [Anthropic, 26 มิ.ย. 2026](https://www.anthropic.com/research/economic-index-june-2026-report)
 
-### 3.2 ผู้ขายโมเดล โครงสร้างพื้นฐาน และแพลตฟอร์ม
+IEA บอกสองด้านพร้อมกัน: พลังงานต่อหนึ่งงานลดลงอย่างน้อยระดับสิบเท่าต่อปีในช่วงหลังจากความก้าวหน้าด้านเทคโนโลยี ขณะที่งาน reasoning/agentic บางชนิดกินพลังงานต่อคำขอมากกว่าข้อความง่ายหลายร้อยถึงหลายพันเท่า ข้อสรุปจึงขึ้นกับ **ปริมาณใช้ × ชนิดงาน × ประสิทธิภาพ** ไม่ใช่การเลือกอ้างเพียงด้านที่สนับสนุนมุมมองตน [IEA 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
 
-**ข้อเท็จจริง:** OpenAI คิดค่าใช้ตามโทเคนและเครื่องมือใน Agents API; Grok Bot มีโควตาแยกตามผลิตภัณฑ์; OpenAI รายงานว่าในมิถุนายน 2026 Codex คิดเป็น 64% ของ output tokens รวมของ Codex และ ChatGPT ในกลุ่มลูกค้าองค์กร ซึ่งรวมผลของงานยาวที่ใช้โทเคนมากกว่า [Agents API](https://openai.com/index/introducing-the-agents-api/) · [Grok Bot plans](https://x.ai/news/grok-bot-more-plans) · [OpenAI enterprise](https://openai.com/index/how-enterprises-put-ai-to-work/)
+### ใครมีโอกาสเก็บส่วนต่าง
 
-**การวิเคราะห์:** หากการทำงานอัตโนมัติมีอุปสงค์ ผู้ขายอาจขายการประมวลผลต่อเนื่อง ระบบจัดการ agent และแผนองค์กรได้มากขึ้น การเชื่อมข้อมูลและกิจวัตรที่ผู้ใช้สร้างอาจช่วยให้ผู้ใช้กลับมาใช้อย่างต่อเนื่อง แต่ค่าใช้จ่าย inference, compute และ support ก็เพิ่มตาม ยังไม่มีข้อมูลสาธารณะครบพอจะสรุปกำไรต่อ agent หรือความได้เปรียบระยะยาวของผู้ขายแต่ละราย
+**[วิเคราะห์]** ผู้ครองช่องทางที่ผู้ใช้สั่งงานและระบบที่ Agent ต้องเข้า อาจกำหนดราคา เก็บบริบท และเลือกโมเดลเบื้องหลังได้ จึงมีอำนาจต่อรองต่อผู้ขายโมเดล แต่สิ่งนี้ขึ้นกับการย้ายข้อมูล ความเชื่อใจ และความสามารถจริง Microsoft เน้น governance และข้อมูลในงาน; AWS เน้น runtime/identity ที่ไม่ผูกโมเดล; OpenAI กับ Anthropic ลงทุนทั้งโมเดลและ harness [Microsoft](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/) · [AWS](https://aws.amazon.com/bedrock/agentcore/faqs/) · [OpenAI](https://openai.com/index/introducing-the-agents-api/) · [Anthropic](https://www.anthropic.com/research/trustworthy-agents)
 
-**คำอธิบายแข่งกัน:** (1) ลูกค้าต้องการผลลัพธ์มากขึ้นจริง; (2) ผู้ขายต้องหาวิธีหารายได้จากการลงทุนโมเดลและคอมพิวต์; (3) คู่แข่งเปิดก่อนจึงเร่งตาม; (4) โครงสร้างพื้นฐานด้านเครื่องมือและบริบทพร้อมขึ้น หลักฐานผลิตภัณฑ์สอดคล้องกับทั้งสี่แบบ แต่ยังแยกน้ำหนักแรงจูงใจภายในแต่ละบริษัทไม่ได้ ห้ามนำแรงจูงใจที่อนุมานไปเสนอเป็นข้อเท็จจริง
+อีกด้าน **[วิเคราะห์]** โมเดลที่เก่งกว่ามากอาจยังเก็บค่าเช่าทางเศรษฐกิจได้หากความผิดพลาดในงานแพงหรือโมเดลทดแทนทำงานไม่ได้ ส่วนแอปที่เป็นเพียงหน้าต่างเรียกโมเดลโดยไม่มีข้อมูล เครื่องมือ และการตรวจผล อาจถูกทำซ้ำง่าย คำเหล่านี้เป็นสมมติฐานการแข่งขัน ไม่ใช่การวัด margin ของบริษัทใด
 
-### 3.3 ผู้ให้บริการระบบธุรกิจและข้อมูล
+### อุปสงค์กับผลตอบแทนเป็นคนละเรื่อง
 
-**การวิเคราะห์:** ระบบที่ถือข้อมูล/สิทธิ์และจุดที่งานถูกบันทึกจริง เช่น CRM, ERP, ticketing, cloud, payment และ data warehouse อาจได้คำขอใช้ API หรือการเชื่อมต่อมากขึ้น บางเจ้าจะขายเครื่องมือสร้าง agent บนระบบตนเอง บางเจ้าสูญเสียพื้นที่หน้าจอให้แพลตฟอร์ม agent ความได้เปรียบสุดท้ายขึ้นกับข้อมูล การอนุญาต และความสัมพันธ์กับลูกค้า จึงยังบอกไม่ได้ว่าโมเดลหรือเจ้าของระบบเดิมจะเก็บมูลค่าได้มากกว่ากัน [Agents API partner environments](https://openai.com/index/introducing-the-agents-api/) · [Data agent integrations](https://openai.com/index/put-data-to-work/)
+OpenAI ระบุว่าควรวัดงานที่เสร็จ คุณภาพ และผลลัพธ์ต่อค่าใช้จ่าย มากกว่านับ token อย่างเดียว [OpenAI, 14 ก.ค. 2026](https://openai.com/index/managing-ai-investments-in-agentic-era/) งานทดลองแบบสุ่มของ METR กับนักพัฒนา open-source ที่มีประสบการณ์ 16 คนและ 246 งาน (ช่วง ก.พ.–มิ.ย. 2025) พบการใช้เครื่องมือ AI ทำให้งานในเงื่อนไขทดลองช้าลงประมาณ 20%; METR เตือนว่าการทดลองใหม่ในปี 2026 มีอคติจากผู้ที่ไม่อยากทำงานโดยไม่มี AI จึงยังประมาณผลปัจจุบันอย่างน่าเชื่อถือไม่ได้ **ห้ามแปลว่า Agent ทุกตัวทำให้คนช้าลง** และห้ามใช้การยอมรับเทคโนโลยีแทนผลผลิตสุทธิ [METR, 24 ก.พ. 2026](https://metr.org/blog/2026-02-24-uplift-update/) · [งานวิจัยเดิม](https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf)
 
-## 4. หลักฐานการใช้แยกตามงาน
+## 3. ผลต่อแต่ละชั้นของ Supply Chain AI
 
-### ซอฟต์แวร์และ IT
+### แอป ข้อมูล และการกำกับสิทธิ์
 
-**ข้อเท็จจริง:** Anthropic วิเคราะห์ Claude Code ราว 400,000 sessions จากผู้ใช้ราว 235,000 คนช่วง ต.ค. 2025–เม.ย. 2026 โดยจำแนกว่าประมาณ 56% เป็นการสร้าง แก้ หรือทดสอบและประสานงานโค้ด อีก 17% เป็นการดำเนินระบบ การวิเคราะห์ session ให้ข้อมูลพฤติกรรมของผู้ใช้ Claude Code ไม่ใช่การสุ่มวัดผลผลิตนักพัฒนาทุกคน [Anthropic](https://www.anthropic.com/research/claude-code-expertise)
+**แรงบวก:** ถ้า Agent เปลี่ยนจากถามตอบเป็นทำงานในระบบจริง แอปที่มีข้อมูลและ workflow อาจเก็บค่าบริการจากผลลัพธ์หรือการใช้งานซ้ำ ข้อมูลและสิทธิ์กลายเป็นจุดคอขวดเชิงธุรกิจ [Anthropic: สี่องค์ประกอบ](https://www.anthropic.com/research/trustworthy-agents) · [Microsoft: Agent 365](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/)
 
-**หลักฐานคัดค้าน:** การทดลองสุ่มของ METR ในงานของนักพัฒนา open-source ที่มีประสบการณ์ช่วงต้นปี 2025 ประเมินว่าการใช้ AI ทำให้งานช้าลง 19% (ช่วงความเชื่อมั่น +2% ถึง +39%) ขณะที่การทดลองใหม่ที่เริ่ม ส.ค. 2025 มีค่า raw สื่อไปทางเร็วขึ้น แต่ผู้วิจัยระบุว่าผู้เข้าร่วมที่ไม่อยากทำงานโดยไม่มี AI ถอนตัวหรือไม่เข้าร่วม และเวลาใช้หลาย agent พร้อมกันวัดยาก ผลใหม่จึงยังไม่แม่นพอ [METR](https://metr.org/blog/2026-02-24-uplift-update/)
+**แรงต้าน:** ความผิดพลาด การรั่วไหลของข้อมูล และ prompt injection ทำให้องค์กรต้องซื้อการตรวจสอบและกำหนดขอบเขตการกระทำ มากกว่าปล่อย Agent อิสระทั้งหมด การเชื่อมกับ ERP/CRM ที่มีสิทธิ์จริงอาจช้ากว่าการสาธิต [Anthropic: ความเสี่ยงและสิทธิ์](https://www.anthropic.com/research/trustworthy-agents)
 
-**สรุปอย่างระมัดระวัง:** มีการใช้งานจริงมาก แต่ผลผลิตขึ้นกับโจทย์ ความชำนาญ คุณภาพโค้ดเดิม และเวลาตรวจ การเพิ่มจำนวน commit ไม่ใช่หลักฐานว่า defect หรือเวลาโดยรวมลด
+### โมเดลและแพลตฟอร์ม Agent
 
-### บริการลูกค้า
+**แรงบวก:** งานหลายขั้นใช้โมเดล การเรียกเครื่องมือ หน่วยความจำ และการติดตามผล ผู้ให้บริการแพลตฟอร์มจึงขายมากกว่า token ได้หรือเพิ่มการใช้บริการเดิม OpenAI Agents API ยังคิดตาม token/เครื่องมือและ sandbox ไม่คิดค่า API เพิ่ม; AWS ขายชั้น Runtime/Gateway/Identity/Evaluations; Google มี managed sandbox [OpenAI](https://developers.openai.com/api/docs/guides/agents-api/overview) · [AWS](https://aws.amazon.com/bedrock/agentcore/faqs/) · [Google](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/)
 
-**หลักฐานเชิงเหตุและผลที่ใกล้เคียง:** NBER ศึกษา rollout เครื่องมือ AI ช่วยพนักงาน support 5,179 คน และรายงานจำนวนปัญหาที่แก้ต่อชั่วโมงเพิ่มเฉลี่ย 14% ผลมากในกลุ่มประสบการณ์น้อย เครื่องมือในงานวิจัยเป็น **copilot ช่วยคน** ไม่ได้พิสูจน์ว่าบอตอัตโนมัติสามารถแทนคนเต็มงาน [NBER](https://www.nber.org/papers/w31161)
+**แรงต้าน:** แพลตฟอร์มรองรับหลายโมเดลทำให้ลูกค้าสลับผู้ขายได้ง่ายขึ้น และการแข่งขันด้านราคา/ประสิทธิภาพอาจทำให้มูลค่าต่อ token ลด แม้งานรวมเพิ่ม [AWS: model-agnostic](https://aws.amazon.com/bedrock/agentcore/faqs/) · [OpenAI: ราคาและประสิทธิภาพ](https://openai.com/index/managing-ai-investments-in-agentic-era/)
 
-**กรณี agent:** SpaceXAI รายงานว่า Grok Bot สืบ ticket ตั้งแต่ต้น เชื่อม log/issue tracker และเคส refund 99% จบโดยไม่ใช้คน; กล่าวว่าดู feedback กว่า 20,000 จุดต่อวัน ไม่มีข้อมูลกลุ่มเปรียบเทียบอิสระ นิยามเคสที่รวม และต้นทุนต่อเคสในรายงาน จึงใช้เป็นหลักฐาน deployment และแนวทาง ไม่ใช้เป็นค่าประมาณผลลัพธ์ทั่วไป [SpaceXAI](https://x.ai/news/grok-bot-customer-support)
+### ชิป HBM และการผลิต
 
-### ค้าส่ง/โลจิสติกส์
+**แรงบวก:** หากจำนวนงาน agentic โตเร็วกว่าประสิทธิภาพที่ดีขึ้น จะต้องใช้กำลัง inference เพิ่ม และมีความต้องการ HBM, packaging, CPU และเครือข่ายร่วมกับ accelerator NVIDIA รายงานรายได้ Data Center Q2 FY2027 ที่ 89.0 พันล้านดอลลาร์ เพิ่ม 117% ปีต่อปี [NVIDIA, 26 ส.ค. 2026](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027)
 
-**กรณีใช้งาน:** Choco ระบุว่า OrderAgent เปลี่ยนอีเมล SMS ภาพ และเอกสารเป็นคำสั่งซื้อพร้อมลง ERP โดยใช้ประวัติและ catalog เฉพาะลูกค้า โหมดอัตโนมัติมี threshold และให้คนตรวจข้อยกเว้น; บริษัทอ้างมากกว่า 8.8 ล้านคำสั่งซื้อต่อปี และลดงานกรอกด้วยมือได้สูงสุด 50% ตัวเลข “สูงสุด” ไม่ใช่ผลเฉลี่ย; แหล่งข่าวเป็นกรณีศึกษาของ OpenAI กับลูกค้า [Choco](https://openai.com/index/choco/)
+**ข้อจำกัด:** รายได้นั้นรวมงาน AI อื่นและเป็นยอดขายของผู้ขาย ไม่ใช่ ROI ของผู้ซื้อหรือยอดขายจาก Agent โดยตรง IEA ระบุข้อจำกัด HBM ถึงอย่างน้อยปลาย 2027 และข้อจำกัดการผลิตชิปขั้นสูง; TSMC ประกาศขยาย CoWoS เพื่อรองรับการรวมชิปและ HBM มากขึ้น แต่แผนกำลังผลิตไม่เท่ากับส่งมอบและทำกำไรแล้ว [IEA](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary) · [TSMC 2026 Technology Symposium](https://pr.tsmc.com/system/files/newspdf/attachment/49337b40ff139d51d533076cf7a945b30e107e07/2026%20Tech%20Symposium%20%28E%29_Final_wmn.pdf)
 
-**การวิเคราะห์:** ลักษณะงานที่รับข้อมูลหลายรูปแบบ แปลงเป็นระเบียนที่ตรวจได้ และมีคนรับเคสไม่แน่ใจ เหมาะกับ agent มากกว่างานที่ไม่มี ground truth แต่ต้องระวังความผิดพลาดรหัสสินค้า/หน่วยนับที่ส่งผลการส่งของจริง
+**แรงแข่งขัน:** Google ระบุว่า TPU 8i ให้ performance per dollar สำหรับ inference ดีกว่ารุ่นก่อน 80% ตัวเลขเป็นการเทียบผลิตภัณฑ์ของ Google เอง ไม่ใช่ benchmark อิสระเทียบ NVIDIA แต่แสดงว่าผู้ซื้อรายใหญ่มีทางเลือกออกแบบ ASIC และปรับทั้ง stack [Google, 22 เม.ย. 2026](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/)
 
-### ข้อมูลธุรกิจและการเงิน
+### คลาวด์ เครือข่าย ดาต้าเซ็นเตอร์ ไฟฟ้า
 
-**ข้อเท็จจริง:** Data agent เชื่อมแหล่งข้อมูลและ semantic context เพื่อสร้างการวิเคราะห์และ dashboard; ChatGPT for Financial Services ประกาศเข้าถึงข้อมูลการเงินและงานวิจัย โมเดล และเอกสาร โดยร่วมออกแบบกับสถาบันการเงิน และวางการควบคุมองค์กร [Data agent](https://openai.com/index/put-data-to-work/) · [Financial Services](https://openai.com/index/introducing-chatgpt-financial-services/)
+**แรงบวก:** Agent ที่รันยาวและตอบเร็วทำให้บริการ runtime, sandbox, network และ storage เป็นส่วนของผลิตภัณฑ์ IEA ประเมินการใช้ไฟดาต้าเซ็นเตอร์โลกกรณีกลาง 485 TWh (2025) → 950 TWh (2030) ขณะที่ดาต้าเซ็นเตอร์เน้น AI โตเร็วกว่าค่าเฉลี่ย [IEA 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
 
-**ข้อจำกัด:** การประกาศสินค้าหรือ partnership ไม่ใช่การทดลองยืนยันเวลา/กำไร การวิเคราะห์การเงินต้องรักษานิยามตัวเลข วันที่ข้อมูล สิทธิ์ และการตรวจโดยผู้รับผิดชอบก่อนใช้ตัดสินใจ
+**ข้อจำกัด:** การเชื่อมไฟฟ้า หม้อแปลง อุปกรณ์กำลัง ความหนาแน่นพลังงานต่อ rack ความเห็นชุมชนและเงินทุน ทำให้โครงการที่ประกาศไม่จำเป็นต้องสร้างเสร็จ IEA ระบุว่าการลงทุนดาต้าเซ็นเตอร์อ่อนไหวต่อความเชื่อมั่นเรื่องผลตอบแทน; การใช้จ่ายทุนของบริษัทเทคโนโลยีใหญ่เกิน 400 พันล้านดอลลาร์ในปี 2025 และคาดว่าจะเพิ่ม 75% ในปี 2026 เป็นขนาด **การลงทุน** ไม่ใช่กำไรจาก Agent [IEA 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
 
-### ค้าปลีกและ e-commerce
+## 4. สมมติฐานที่แข่งขันกัน
 
-**ข้อเท็จจริงที่หักล้างภาพง่ายเกินไป:** OpenAI ประกาศในมีนาคม 2026 ว่า Instant Checkout รุ่นแรกยืดหยุ่นไม่พอ จึงเปลี่ยนแนวไปให้ผู้ขายใช้ checkout ของตนเองและเน้นการค้นพบสินค้า ขณะเดียวกันพัฒนา protocol และการเชื่อมร้านค้า [OpenAI](https://openai.com/index/powering-product-discovery-in-chatgpt/)
+**A — ปริมาณงานชนะประสิทธิภาพ [ฉากทัศน์].** Agent ได้งานซ้ำจำนวนมากและงานยาวที่มีคุณค่า จึงเพิ่ม inference รวมเร็วกว่า cost/task ที่ลด ผู้ขายกำลังประมวลผล HBM เครือข่าย และไฟฟ้าได้รับอุปสงค์ต่อเนื่อง ข้อมูลที่หนุน: การใช้ Agent ยาวขึ้นในระบบ Anthropic และการลงทุน/รายได้โครงสร้างพื้นฐานที่เพิ่ม ข้อมูลที่ยังขาด: สัดส่วนของ Agent ใน workload รวม และกำไรต่อหนึ่งงาน [Anthropic](https://www.anthropic.com/research/measuring-agent-autonomy) · [NVIDIA](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027)
 
-**การวิเคราะห์:** agent อาจช่วยค้น เทียบ และเริ่มซื้อได้ แต่การชำระเงิน ความรับผิดชอบ การคืนสินค้า ความปลอดภัย และความสัมพันธ์ร้านค้าอาจทำให้มูลค่ากระจาย ไม่ควรเล่าว่า AI “ยึดการซื้อขาย” แล้ว
+**B — ประสิทธิภาพและการแข่งขันชนะ [ฉากทัศน์].** ความสามารถต่อดอลลาร์ดีขึ้น, งานง่ายย้ายไปโมเดลเล็ก/ASIC, ระบบใช้ cache และ routing ทำให้ Agent เพิ่มจำนวนแต่ไม่เพิ่ม compute หรือรายได้ฮาร์ดแวร์ตามสัดส่วน ข้อมูลที่หนุน: IEA ระบุพลังงานต่อ task ลดมาก, Google เสนอชิป inference เฉพาะ, OpenAI ระบุราคา token ลด ข้อมูลที่ยังขาด: elasticity จริงของอุปสงค์เมื่อราคาลด [IEA](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary) · [Google](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/) · [OpenAI](https://openai.com/index/managing-ai-investments-in-agentic-era/)
 
-### สุขภาพ กฎหมาย ภาครัฐ และความปลอดภัยไซเบอร์
+**C — งานมีจริงแต่ขยายช้า [ฉากทัศน์].** การพิสูจน์ ROI, สิทธิ์ข้อมูล, การตรวจผิดพลาด และข้อจำกัดไฟฟ้า/HBM ทำให้การลงทุนเร็วกว่าการใช้งานที่จ่ายคุ้มในระยะต้น ข้อมูลที่หนุน: METR พบผลผลิตไม่ได้บวกเสมอในงานหนึ่งและ IEA ระบุคอขวด ข้อมูลที่ยังขาด: ตัวอย่างองค์กรจำนวนมากที่วัดผลสุทธิหลังใช้ Agent จริง [METR](https://metr.org/blog/2026-02-24-uplift-update/) · [IEA](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
 
-**สถานการณ์:** ใช้ AI เตรียมข้อมูลหรือร่างงานได้ แต่การอนุมัติที่มีผลต่อสุขภาพ สิทธิ ทรัพย์สิน หรือความปลอดภัยต้องมีการควบคุมเข้มเป็นพิเศษ หลักฐานในเอกสารนี้ไม่พอจะจัดอันดับ ROI รายอุตสาหกรรมเหล่านี้ อาจเป็นตลาดใหญ่แต่ไม่ควรใส่ในกลุ่ม “พิสูจน์แล้ว” จากตัวอย่างอื่น [OpenAI: agent risk](https://openai.com/index/introducing-chatgpt-agent/) · [link safety](https://openai.com/index/ai-agent-link-safety/)
+สามฉากทัศน์อาจเกิดต่างกันตามช่วงเวลาและประเภทงาน ไม่ใช่ตัวเลือกที่ต้องมีเพียงหนึ่งเดียว
 
-## 5. ทำไมงานเดียวกันจึงให้ผลไม่เท่ากัน
+## 5. หลักฐานค้านและจุดที่ห้ามกล่าวเกิน
 
-**เงื่อนไขเอื้อ:** ข้อมูลถูกต้องและเชื่อมถึง, ขอบเขตสิทธิ์ชัด, งานมีผลลัพธ์ตรวจได้, รอบแก้สั้น, ต้นทุนความผิดพลาดรับได้, จุดส่งต่อคนชัด, ขั้นตอนซ้ำบ่อยพอให้คุ้มตั้งระบบ
+1. **เปิดตัว ≠ ใช้จริงในวงกว้าง.** ข่าวผลิตภัณฑ์บอกความสามารถที่เสนอและความตั้งใจของผู้ขาย ไม่บอกจำนวนงานที่สำเร็จสุทธิหรือการต่อสัญญาของลูกค้า
+2. **token มาก ≠ มูลค่าสูง.** งานที่ซับซ้อนอาจใช้ token มากและมีคุณค่า แต่การวนซ้ำผิดพลาดก็ใช้ token มาก ต้องวัด completion, quality, review time และ spend ต่อ task [OpenAI](https://openai.com/index/how-to-connect-ai-usage-to-business-value/)
+3. **ไฟฟ้าดาต้าเซ็นเตอร์ ≠ ไฟฟ้า Agent.** ตัวเลข IEA รวมหลาย workload และเป็นกรณีคาดการณ์ถึง 2030 ไม่มีตัวคูณที่นำจำนวน Agent ไปแปลงเป็น TWh ได้ตรง ๆ [IEA](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
+4. **ยอดขาย GPU ≠ ลูกค้าได้กำไร.** รายได้ NVIDIA ยืนยันยอดขายช่วงหนึ่ง ไม่ยืนยัน utilization ระยะยาวหรือความสามารถจ่ายของแอปปลายทาง [NVIDIA](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027)
+5. **benchmark ≠ ผลธุรกิจทุกประเภท.** METR time horizon วัดงานซอฟต์แวร์ชุดหนึ่งที่ Agent ทำสำเร็จด้วยความน่าจะเป็นระดับหนึ่ง ไม่ใช่เวลาที่ระบบทำงานเองจริงหรือผลตอบแทนทางการเงิน [METR](https://metr.org/time-horizons/)
+6. **ผู้ขายชิปเดิม ≠ ชนะทุกแบบของ inference.** การออกแบบ ASIC และการเพิ่มประสิทธิภาพบริการ inference เพิ่มการแข่งขัน แต่ยังไม่พิสูจน์ว่าชิปใดแทนกันได้สมบูรณ์ในทุก workload [Google](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/)
 
-**เงื่อนไขถ่วง:** ข้อมูลอยู่ในหัวคนหรือกระจัดกระจาย, ต้องใช้วิจารณญาณด้านความรับผิดชอบสูง, หน้าจอ/ขั้นตอนเปลี่ยนบ่อย, การอนุมัติในหลายระบบ, ต้องย้อนตรวจผลลัพธ์จำนวนมาก, agent ต้องเข้าถึงสิทธิ์กว้างเกินจำเป็น
+## 6. สิ่งที่ควรติดตามเพื่อตัดสินสมมติฐาน
 
-**ความเสี่ยงเฉพาะ agent:** ข้อความจากเว็บหรือเอกสารอาจหลอกให้ agent ทำสิ่งที่ผู้ใช้ไม่ได้สั่ง (prompt injection) และ URL อาจเป็นช่องนำข้อมูลออก ผู้ขายเองระบุว่าต้องใช้มาตรการป้องกันเมื่อ agent เข้าถึงข้อมูลและลงมือบนเว็บ [OpenAI: safety](https://openai.com/index/introducing-chatgpt-agent/) · [link safety](https://openai.com/index/ai-agent-link-safety/)
+- **ปลายทาง:** งานที่ Agent จบและตรวจได้ต่อเดือน, อัตราต้องแก้, เวลาคนตรวจ, อัตราต่อสัญญา, รายได้สุทธิต่อ task
+- **โมเดล/คลาวด์:** token และ tool calls ต่อ task ที่สำเร็จ, ต้นทุนรวมต่อ task, สัดส่วน routing ไปโมเดลเล็ก, utilization, margin หลังหักพลังงานและค่าเสื่อม
+- **ชิป/ซัพพลาย:** HBM และ packaging capacity ที่ส่งมอบจริง, lead time, การใช้ GPU/ASIC, คำสั่งซื้อที่ยืนยันเทียบกับแผน
+- **ดาต้าเซ็นเตอร์:** เมกะวัตต์ที่ต่อไฟแล้ว, ระยะเวลารอเชื่อมกริด, ต้นทุนไฟและระบายความร้อน, โครงการที่เลื่อน/ยกเลิก
 
-## 6. สมมติฐานที่แข่งขันกันและหลักฐานที่จะหักล้าง
+หากข้อมูลเหล่านี้ไม่เปิดเผย ควรกล่าวว่า **ยังวัดไม่ได้** ไม่เติมตัวเลขสมมติให้ดูแน่นอน
 
-**สมมติฐาน A — งานจริงกำลังเป็นตลาดใหญ่:** สอดคล้องกับการเปิดผลิตภัณฑ์หลายแบบและงานลูกค้าที่ลงระบบจริง สิ่งที่จะทำให้อ่อนลง: การทดลองอิสระหลายอุตสาหกรรมพบต้นทุนรวมสูงกว่าคน/ระบบเดิม หรืออัตรางานที่ต้องให้คนแก้สูงจนไม่คุ้ม
+## 7. Claim ledger สำหรับตรวจย้อนหลัง
 
-**สมมติฐาน B — เป็นการแข่งขันแย่งจุดเชื่อมผู้ใช้ก่อนที่ ROI จะชัด:** สอดคล้องกับการเปิด beta และการแยกโควตา/ผูกระบบนิเวศ สิ่งที่จะทำให้อ่อนลง: ลูกค้าต่อสัญญาจากผลลัพธ์ที่วัดได้หลายรอบและยอมจ่ายอย่างยั่งยืน โดยไม่ต้องอาศัย subsidy หนัก
+### C01 — บริษัทชั้นนำเปิด Agent หลายแบบ
 
-**สมมติฐาน C — ผู้ชนะจะเป็นเจ้าของข้อมูลและ workflow มากกว่าผู้ทำโมเดล:** เหตุผลคือคุณค่าขึ้นกับบริบทและสิทธิ์เฉพาะองค์กร สิ่งที่จะทำให้อ่อนลง: ผู้ใช้เปลี่ยนผู้ให้บริการ model/harness ได้อย่างง่ายและระบบข้อมูลเดิมไม่สามารถเก็บมูลค่าเพิ่ม หรือโมเดลเหนือกว่ามากจนชนะโดยไม่ต้อง integration
+**ประเภท:** [ข้อเท็จจริงเรื่องการเปิดตัว]  
+**แหล่ง:** [OpenAI 10 ก.ย. 2026](https://openai.com/index/introducing-the-agents-api/), [Google 19 พ.ค. 2026](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/), [AWS 22 เม.ย. 2026](https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/), [Microsoft 9 มี.ค. 2026](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/), [SpaceXAI 11 ส.ค. 2026](https://x.ai/news/introducing-grok-bot)  
+**ข้อจำกัด/คำอธิบายอื่น:** ผลิตภัณฑ์ต่างหน้าที่และระดับความพร้อม; ข่าวเปิดตัวไม่วัดการใช้จริง  
+**ความมั่นใจ:** สูงเฉพาะการเปิดตัว; ต่ำต่อข้ออ้างว่าผลตอบแทนกว้างขวาง  
+**ผลต่อการเล่า:** แสดงหลายทางเข้าสู่งานเดียวกัน ไม่วาดว่าเหมือนกันทั้งหมด
 
-**ประเมินปัจจุบัน:** A และ B อยู่ร่วมกันได้ หลักฐานยืนยันว่ามีสินค้าจริงและงานจริง แต่ยังไม่พอให้ตัดสินมูลค่ารวมสุทธิหรือผู้ชนะระยะยาว C เป็นการวิเคราะห์โครงสร้างการแข่งขัน ยังไม่มีข้อมูลพอให้ฟันธง
+### C02 — การมอบอิสระสัมพันธ์กับ token ที่ใช้มากขึ้น
 
-## 7. Claim ledger สำหรับตรวจข้ออ้างก่อนทำเรื่องเล่า
+**ประเภท:** [ข้อเท็จจริงในข้อมูลผู้ให้บริการ]  
+**แหล่ง:** [Anthropic Economic Index, เผยแพร่ 26 มิ.ย. 2026](https://www.anthropic.com/research/economic-index-june-2026-report); ข้อมูลผลิตภัณฑ์ของตนในช่วง เม.ย.–มิ.ย. 2026  
+**หลักฐาน:** ความสัมพันธ์ r = 0.68 ระหว่างระดับ autonomy เฉลี่ยกับ median token ในกลุ่ม artifact บน chat/Cowork  
+**ข้อจำกัด:** เป็นความสัมพันธ์ ไม่ใช่เหตุผลเชิงสาเหตุ; ข้อมูล Claude ไม่แทนทั้งตลาด  
+**ความมั่นใจ:** กลางต่อทิศทางในตัวอย่าง; ต่ำต่อขนาดผลรวมอุตสาหกรรม  
+**ผลต่อการเล่า:** ภาพงานยาวอาจใช้หลายรอบ แต่ห้ามใส่สเกล GPU แบบวัดจริง
 
-| รหัส/ประเภท | ข้ออ้างและแหล่งตรง | หลักฐานสวนหรือข้อจำกัด | ความมั่นใจ / ผลต่อเรื่อง |
-|---|---|---|---|
-| F1 ข้อเท็จจริง | Grok Bot beta 11 ส.ค. 2026, คอมพิวเตอร์คลาวด์และบอตหลายตัว [SpaceXAI](https://x.ai/news/introducing-grok-bot) | คำอธิบายความสามารถของผู้ขาย ไม่ยืนยันความสำเร็จทุกงาน | สูงต่อการเปิดตัว; ห้ามตีความเป็นอัตโนมัติสมบูรณ์ |
-| F2 ข้อเท็จจริง | Agents API public beta 10 ก.ย. 2026 [OpenAI](https://openai.com/index/introducing-the-agents-api/) | เป็น API/harness สำหรับผู้พัฒนา ไม่ใช่ Grok Bot แบบเดียวกัน | สูง; แยกสองผลิตภัณฑ์ให้ชัด |
-| F3 ข้อเท็จจริง | Data agent เปิด 10 ก.ย. 2026 [OpenAI](https://openai.com/index/put-data-to-work/) | ไม่มีผล ROI เฉลี่ย | สูงต่อการเปิด; ต่ำต่อผลตอบแทน |
-| F4 รายงานผู้ขาย | refund 99% ไม่ใช้คน และ feedback >20,000 จุด/วัน [SpaceXAI](https://x.ai/news/grok-bot-customer-support) | ไม่มีฐานจำนวน refund, กลุ่มเปรียบเทียบ, ต้นทุน หรือการตรวจอิสระ | ปานกลางต่อสิ่งที่บริษัทรายงาน; ต่ำต่อการขยายผล |
-| F5 งานวิจัย | AI ช่วย support 5,179 คน เพิ่ม issues/hour 14% เฉลี่ย [NBER](https://www.nber.org/papers/w31161) | เป็น AI ช่วยคนในบริษัทหนึ่ง ไม่ใช่ autonomous bot | สูงในบริบทศึกษา; ใช้ต้านการสรุปแทนคนทั้งหมด |
-| F6 งานวิจัย | METR ทดลองสุ่มต้นปี 2025 พบช้าลง 19% [METR](https://metr.org/blog/2026-02-24-uplift-update/) | เครื่องมือ/ช่วงเวลานั้นเก่า; การทดลองใหม่มี selection bias | สูงต่อผลศึกษาเดิม; ไม่ใช้ทำนายทุกงานใน 2026 |
-| F7 งานศึกษาใช้จริง | ~400,000 Claude Code sessions [Anthropic](https://www.anthropic.com/research/claude-code-expertise) | กลุ่มผู้ใช้เลือกใช้เอง; task value ประเมินจากราคา freelance ไม่ใช่รายได้ที่เกิดจริง | สูงต่อรูปแบบใช้; ต่ำต่อ ROI เฉลี่ย |
-| F8 กรณีศึกษา | Choco รายงาน >8.8 ล้าน orders/ปี และลดกรอกมือได้สูงสุด 50% [OpenAI/Choco](https://openai.com/index/choco/) | ผู้ขาย/ลูกค้ารายงาน; ไม่มีฐานเปรียบเทียบอิสระ; “สูงสุด” ไม่ใช่เฉลี่ย | ปานกลางต่อ deployment; ต่ำต่อผลทั่วไป |
-| F9 ข้อเท็จจริง | OpenAI เปลี่ยนแนว Instant Checkout ไป merchant checkout [OpenAI](https://openai.com/index/powering-product-discovery-in-chatgpt/) | ไม่ได้แปลว่า shopping agent ล้มเหลวทั้งหมด | สูง; เป็นความตึงเครียดของเรื่องการซื้อแทน |
-| I1 การวิเคราะห์ | ผู้ขายหวังการใช้/รายได้/ความถี่กลับมาของงาน agent [Agents API](https://openai.com/index/introducing-the-agents-api/) · [Grok plans](https://x.ai/news/grok-bot-more-plans) | ไม่เห็นกำไร ต้นทุน compute หรือแรงจูงใจภายในครบ | ปานกลาง; ต้องใช้คำว่า “อาจ/มีแรงจูงใจ” |
-| S1 สถานการณ์ | งานข้อมูลพร้อมและตรวจผลได้อาจขยายก่อนงานเสี่ยงสูง | ความก้าวหน้าด้าน reliability/กฎเกณฑ์อาจเปลี่ยนลำดับ | ปานกลาง; ห้ามทำภาพเป็นอันดับ ROI ที่วัดแล้ว |
+### C03 — Agent บางงานใช้พลังงานมาก แต่ประสิทธิภาพต่อ task ก็ดีขึ้น
 
-*F = รายงาน/ข้อเท็จจริงตามแหล่ง; I = การวิเคราะห์; S = สถานการณ์ ไม่ใช่สถิติประชากร* 
+**ประเภท:** [การประเมินของหน่วยงานอิสระ]  
+**แหล่ง:** [IEA, Key Questions on Energy and AI, 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)  
+**หลักฐาน:** งาน reasoning/agentic บางชนิดใช้พลังงานต่อคำขอมากกว่าข้อความง่ายหลายร้อย/พันเท่า; พลังงานต่อ task ลดลงอย่างน้อยหนึ่ง order of magnitude ต่อปีในช่วงหลัง  
+**ข้อจำกัด:** ช่วงการใช้พลังงานขึ้นกับชนิดงาน; disclosure ยังไม่ครบ; ไม่มีค่าเฉลี่ย Agent หนึ่งตัวที่ใช้ได้ทั่วไป  
+**ความมั่นใจ:** กลางต่อกลไก; ต่ำต่อการทำนาย Agent-only load  
+**ผลต่อการเล่า:** ให้สองแรงสวนกันอยู่ในภาพเดียว
 
-## 8. ทางเลือกที่พิจารณาและแกนเรื่องที่อนุมัติ
+### C04 — ไฟฟ้าดาต้าเซ็นเตอร์อาจเกือบเท่าตัวถึงปี 2030
 
-**ทางเลือก 1: “จากแชตสู่คนทำงานดิจิทัล”** เริ่มจากความแตกต่างของ chat กับงานที่จบในระบบ แล้วค่อยถามว่าใครได้มูลค่า เหมาะกับผู้ชมทั่วไป ข้อเสียคืออาจกว้างและต้องระวังคำเปรียบ “คนทำงาน” ไม่ให้เกินความสามารถจริง
+**ประเภท:** [ประมาณการกรณีกลาง]  
+**แหล่ง:** [IEA 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)  
+**หลักฐาน:** 485 TWh ในปี 2025 เทียบกับ 950 TWh ในปี 2030  
+**ข้อจำกัด:** รวมดาต้าเซ็นเตอร์ทั้งหมด; ขึ้นกับเงินทุน การต่อไฟ และการใช้ AI; ไม่ใช่ไฟฟ้าจาก Agent เท่านั้น  
+**ความมั่นใจ:** กลางต่อการเป็นกรณีกลางของ IEA; ต่ำต่อผลลัพธ์จริงปี 2030  
+**ผลต่อการเล่า:** หากใช้กราฟต้องติดป้าย “global data centres, IEA central case”
 
-**ทางเลือก 2: “สนามรบเพื่อเป็นประตูสู่งาน”** ถามว่าผู้ใช้จะมอบสิทธิ์/บริบทให้แพลตฟอร์มใด และโมเดล ระบบธุรกิจ หรือโครงสร้างพื้นฐานใครเก็บมูลค่า เหมาะกับผู้ชมเทคและการลงทุน ข้อเสียคือหลักฐานส่วนแบ่งกำไรยังไม่พอ ต้องเล่าเป็นกลไกและเงื่อนไข
+### C05 — HBM และอุปกรณ์ไฟฟ้าเป็นข้อจำกัด
 
-**ทางเลือก 3: “งานไหนคุ้มจริง งานไหนยังเป็นเดโม”** ใช้งานบริการลูกค้า โค้ด สั่งซื้อ และ commerce เป็นเคสเปรียบเทียบ เหมาะกับผู้ชมที่อยากตัดกระแส hype ข้อเสียคือผลศึกษาอิสระที่เจาะ autonomous agents ยังมีน้อย และห้ามเอาผล copilot มาแทน agent
+**ประเภท:** [การประเมินห่วงโซ่อุปทาน]  
+**แหล่ง:** [IEA 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary), [TSMC 2026 Technology Symposium](https://pr.tsmc.com/system/files/newspdf/attachment/49337b40ff139d51d533076cf7a945b30e107e07/2026%20Tech%20Symposium%20%28E%29_Final_wmn.pdf)  
+**หลักฐาน:** IEA คาดความตึงตัว HBM อย่างน้อยถึงปลาย 2027 และชี้ข้อจำกัดหม้อแปลง/อุปกรณ์กำลัง; TSMC วางแผนขยาย CoWoS  
+**ข้อจำกัด:** สถานะอาจเปลี่ยนเมื่อกำลังผลิตมาเพิ่ม; ไม่มีสัดส่วนที่เกิดจาก Agent แยกต่างหาก  
+**ความมั่นใจ:** กลาง  
+**ผลต่อการเล่า:** แสดงการต่อกันของคอขวด ไม่ระบุบริษัทผู้ชนะจากแผนที่นี้
 
-**การตัดสินใจของเจ้าของงาน (27 ก.ย. 2026):** เลือกแกนเรื่องแบบผสาน A+C ที่เสนอว่า **“ทำไมต้องรีบสร้างบอต ทั้งที่ยังไม่คุ้มทุกงาน”** คำถามนำคือแรงผลักทางเทคนิค/ธุรกิจที่ทำให้ Grok Bot, Agents API และเครื่องมือองค์กรเกิดขึ้นเร็ว เทียบกับหลักฐานว่าต้นทุนรวมและคุณภาพคุ้มจริงในงานใด ข้อสรุปต้องมีเงื่อนไข: งานที่มีข้อมูลพร้อม สิทธิ์ชัด ผลตรวจได้ และส่งกรณียากให้คน เห็นการใช้ก่อน; กำไรสุทธิทั้งตลาดและผู้ชนะยังพิสูจน์ไม่ได้
+### C06 — รายได้ Data Center ของ NVIDIA โตแรง
 
-**ขอบเขตการเล่า:** เปิดจากงานที่แชตให้เพียงคำตอบกับงานที่ agent ลงมือจบในระบบ; อธิบายแรงจูงใจผู้ขายในฐานะการวิเคราะห์; ทดสอบด้วยบริการลูกค้า ซอฟต์แวร์ คำสั่งซื้อ และ commerce; ปิดด้วยเกณฑ์ว่า “งานแบบไหนน่าจะคุ้ม” ไม่เปลี่ยนผลการศึกษา copilot เป็นผลของบอตอัตโนมัติ และไม่ใช้สถิติผู้ขายเป็นผลเฉลี่ยตลาด
+**ประเภท:** [ผลประกอบการบริษัท]  
+**แหล่ง:** [NVIDIA Q2 FY2027, ไตรมาสสิ้นสุด 26 ก.ค.; เผยแพร่ 26 ส.ค. 2026](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027)  
+**หลักฐาน:** 89.0 พันล้านดอลลาร์ เพิ่ม 117% ปีต่อปี  
+**ข้อจำกัด:** รวมหลายงาน AI และธุรกิจ Data Center; ไม่บอก ROI ของลูกค้าหรือส่วนที่ Agent สร้าง  
+**ความมั่นใจ:** สูงต่อยอดรายงาน; ต่ำต่อการแยก Agent  
+**ผลต่อการเล่า:** ใช้เป็นภาพขนาดตลาดอุปกรณ์ ไม่อ้างความสำเร็จของ Agent
 
-## 9. สิ่งต้องตรวจอีกครั้งก่อนเผยแพร่
+### C07 — ASIC และการทำ inference ให้ถูกลงเป็นแรงแข่งขัน
 
-ตรวจข่าวหรือประกาศหลัง 27 ก.ย. 2026, สถานะ beta และสิทธิ์การใช้งาน, ตัวเลขลูกค้าและวิธีวัดที่ผู้ขายอาจอัปเดต, ข้อมูลความปลอดภัยหรือเหตุการณ์ใหม่, แหล่งต้นทางของภาพและข้อมูลกราฟ ก่อนลงเว็บไซต์จริง
+**ประเภท:** [คำกล่าวผู้ขาย + วิเคราะห์]  
+**แหล่ง:** [Google TPU 8i, 22 เม.ย. 2026](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/)  
+**หลักฐาน:** Google ระบุ performance per dollar ดีขึ้น 80% จาก TPU รุ่นก่อนสำหรับ inference  
+**ข้อจำกัด:** เทียบผลิตภัณฑ์ตนเอง ไม่มีการยืนยันว่าแทน GPU ทุกชนิดได้; อาจมีต้นทุนเปลี่ยนระบบ  
+**ความมั่นใจ:** กลางต่อความตั้งใจและทิศทางออกแบบ; ต่ำต่อผลส่วนแบ่งตลาด  
+**ผลต่อการเล่า:** อย่าวาดชิปชนิดหนึ่งชนะเด็ดขาด
 
-## แหล่งหลักพร้อมวันและบทบาท
+### C08 — งานที่ใช้ AI อาจไม่เพิ่มผลิตภาพเสมอ
 
-- SpaceXAI (11 ส.ค. 2026), Grok Bot: https://x.ai/news/introducing-grok-bot
-- SpaceXAI (26 ส.ค. 2026), ขยายแผน: https://x.ai/news/grok-bot-more-plans
-- SpaceXAI (22 ก.ย. 2026), support case: https://x.ai/news/grok-bot-customer-support
-- OpenAI (10 ก.ย. 2026), Agents API: https://openai.com/index/introducing-the-agents-api/
-- OpenAI (10 ก.ย. 2026), Data agent: https://openai.com/index/put-data-to-work/
-- OpenAI (16 ก.ย. 2026), business outcomes: https://openai.com/index/how-to-connect-ai-usage-to-business-value/
-- OpenAI (12 ส.ค. 2026), enterprise usage: https://openai.com/index/how-enterprises-put-ai-to-work/
-- OpenAI (24 มี.ค. 2026), product discovery/checkout pivot: https://openai.com/index/powering-product-discovery-in-chatgpt/
-- OpenAI/Choco (27 เม.ย. 2026), orders: https://openai.com/index/choco/
-- NBER, *Generative AI at Work* (เผยแพร่ฉบับวิจัย): https://www.nber.org/papers/w31161
-- Anthropic (16 มิ.ย. 2026), coding sessions: https://www.anthropic.com/research/claude-code-expertise
-- METR (24 ก.พ. 2026), productivity study update: https://metr.org/blog/2026-02-24-uplift-update/
-- OpenAI (28 ม.ค. 2026), URL exfiltration: https://openai.com/index/ai-agent-link-safety/
+**ประเภท:** [งานทดลองที่มีขอบเขต]  
+**แหล่ง:** [METR, ศึกษางาน ก.พ.–มิ.ย. 2025](https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf), [อัปเดต 24 ก.พ. 2026](https://metr.org/blog/2026-02-24-uplift-update/)  
+**หลักฐาน:** 16 นักพัฒนา, 246 งาน, ช้าลงประมาณ 20% ภายใต้เงื่อนไขการทดลองเดิม; การทดลองใหม่ให้สัญญาณที่ไม่น่าเชื่อถือเรื่องผลปัจจุบัน  
+**ข้อจำกัด:** งานและผู้เข้าร่วมเฉพาะกลุ่ม; เครื่องมือเปลี่ยนเร็ว; ไม่ใช่งาน Agent ทั้งหมด  
+**ความมั่นใจ:** กลางต่อผลการทดลองเดิม; ต่ำต่อการนำไปทำนายปี 2026  
+**ผลต่อการเล่า:** เตือนว่าการใช้จริงและผลสุทธิต่างกัน
+
+### C09 — การกำกับสิทธิ์เป็นส่วนของคุณค่าทางธุรกิจ
+
+**ประเภท:** [ข้อเท็จจริงด้านผลิตภัณฑ์ + วิเคราะห์]  
+**แหล่ง:** [Microsoft Agent 365](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/), [AWS AgentCore](https://aws.amazon.com/bedrock/agentcore/faqs/), [Anthropic ความปลอดภัย](https://www.anthropic.com/research/trustworthy-agents)  
+**หลักฐาน:** ผู้ขายสร้างชั้น identity, policy, observability และ evaluations  
+**ข้อจำกัด:** การมีผลิตภัณฑ์ไม่ยืนยันรายได้หรือ moat ที่ยั่งยืน  
+**ความมั่นใจ:** สูงต่อการมีชั้นผลิตภัณฑ์; กลางต่อความสำคัญเชิงกลยุทธ์  
+**ผลต่อการเล่า:** แสดง Agent ต้องผ่านประตูสิทธิ์ก่อนลงมือ
+
+### C10 — การเปิดตัว Agent ไม่ยืนยัน ROI ทั่วไป
+
+**ประเภท:** [วิเคราะห์จากช่องว่างหลักฐาน]  
+**แหล่ง:** [OpenAI: วัดผลลัพธ์](https://openai.com/index/how-to-connect-ai-usage-to-business-value/), [METR](https://metr.org/blog/2026-02-24-uplift-update/), [IEA: ความไวต่อผลตอบแทน](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)  
+**ข้อโต้แย้งที่เป็นไปได้:** บางองค์กรอาจได้ผลตอบแทนสูงในงานเฉพาะ แม้ยังไม่มีข้อมูลภาพรวม  
+**ความมั่นใจ:** สูงว่า “ยังพิสูจน์ทั่วไปไม่ได้”; ต่ำต่อการระบุผู้แพ้ชนะรายบริษัท  
+**ผลต่อการเล่า:** จบด้วยคำถามที่วัดได้ ไม่ใช่รายชื่อหุ้นชนะ
+
+## 8. ทางเลือกของคำถามเรื่องเล่า ก่อนเจ้าของงานเลือก thesis
+
+- **ทางเลือก ก:** ใครจะถือจุดรับงานและผลลัพธ์ เมื่อโมเดลกลายเป็นส่วนที่สลับได้?
+- **ทางเลือก ข:** Agent จะเปลี่ยนจากการซื้อกำลังฝึกโมเดลไปเป็นการซื้อ inference และโครงสร้างพื้นฐานชนิดใด?
+- **ทางเลือก ค:** การเติบโตของงาน Agent จะมากพอชนะการลดต้นทุนต่อ task และข้อจำกัดไฟฟ้า/HBM หรือไม่?
+
+ทั้งสามยังเปิดไว้ เอกสารนี้ไม่ได้กำหนดลำดับฉากเว็บหรือภาพสรุปสุดท้ายจนกว่าเจ้าของงานจะเลือก thesis
+
+## แหล่งหลักและวันที่
+
+- [OpenAI, Agents API, 10 ก.ย. 2026](https://openai.com/index/introducing-the-agents-api/); [ต้นทุนและผลลัพธ์, 14 ก.ค. 2026](https://openai.com/index/managing-ai-investments-in-agentic-era/)
+- [Anthropic, Economic Index, 26 มิ.ย. 2026](https://www.anthropic.com/research/economic-index-june-2026-report); [การใช้ Agent จริง, 18 ก.พ. 2026](https://www.anthropic.com/research/measuring-agent-autonomy); [ความปลอดภัย, 9 เม.ย. 2026](https://www.anthropic.com/research/trustworthy-agents)
+- [Google, Managed Agents, 19 พ.ค. 2026](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/); [TPU 8i, 22 เม.ย. 2026](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/)
+- [AWS, AgentCore, 22 เม.ย. 2026](https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/); [Microsoft, Agent 365, 9 มี.ค. 2026](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/); [SpaceXAI, Grok Bot, 11 ส.ค. 2026](https://x.ai/news/introducing-grok-bot)
+- [IEA, Key Questions on Energy and AI, 2026](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary); [NVIDIA, Q2 FY2027, 26 ส.ค. 2026](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027); [TSMC, Technology Symposium 2026](https://pr.tsmc.com/system/files/newspdf/attachment/49337b40ff139d51d533076cf7a945b30e107e07/2026%20Tech%20Symposium%20%28E%29_Final_wmn.pdf)
+- [METR, randomized trial, ข้อมูล ก.พ.–มิ.ย. 2025](https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf); [METR, อัปเดต 24 ก.พ. 2026](https://metr.org/blog/2026-02-24-uplift-update/)
