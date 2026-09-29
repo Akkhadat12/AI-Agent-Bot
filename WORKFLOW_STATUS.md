@@ -6,7 +6,7 @@
 - **Approved thesis:** Will verified completed agent work grow faster than full cost per task falls? Supporting lens: who controls task intake, data, permissions, and routing?
 - **Stage:** `READY_FOR_QA` — Build (Claude Code) deployed the site to production on 29 September 2026.
 - **Research cut-off:** 29 September 2026.
-- **Last verified handoff content commit:** [`ffe39f7`](https://github.com/Akkhadat12/AI-Agent-Bot/commit/ffe39f7); this status update is the final handoff marker.
+- **Last verified handoff content commit:** research [`ffe39f7`](https://github.com/Akkhadat12/AI-Agent-Bot/commit/ffe39f7); build and docs [`563dd56`](https://github.com/Akkhadat12/AI-Agent-Bot/commit/563dd56); this status update is the Build → QA handoff marker.
 - **Current public build URL:** https://agent-task-cost-2026.vercel.app (Vercel production `dpl_2GKJ2FM93uUXZrrxK9at26w5UW6X`, deployed from commit `1d8c17c`, `web/`).
 - **Build record:** [BUILD_NOTES.md](BUILD_NOTES.md) · published screenshots in [docs/screenshots/](docs/screenshots/) · Thai scene rationale: [06_SCENE_RATIONALE (Google Doc)](https://docs.google.com/document/d/1HQQOKQWECoc-VZYH8nzLLU8WS_5fMa12-6dbzdd6BFM/edit).
 - **Owner Drive folder:** [reading PDFs and future scene rationale](https://drive.google.com/drive/folders/1CBG-OOusgdXWSvLjtT3cMSCJx0yCTYU9).
