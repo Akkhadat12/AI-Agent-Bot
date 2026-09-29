@@ -5,8 +5,8 @@
 | Item | Value |
 |---|---|
 | Public production URL | **https://agent-task-cost-2026.vercel.app** |
-| Deployment | Vercel production `dpl_GqwkRKjoN5FBN8WqNBCXz5z5CHTB`, READY, 29 September 2026 (QA-001 fix). The first deployment was `dpl_2GKJ2FM93uUXZrrxK9at26w5UW6X` from `1d8c17c` |
-| Source branch / deployed commit | `agent-bot-ai-supply-chain-2026` @ **`c10af1f`**. The `web/` app was deployed from this commit with `vercel deploy --prod`; later commits change docs only |
+| Deployment | Vercel production, READY, 30 September 2026 (QA-002 fix), aliased to the URL above. Earlier: `dpl_GqwkRKjoN5FBN8WqNBCXz5z5CHTB` (QA-001 fix) and `dpl_2GKJ2FM93uUXZrrxK9at26w5UW6X` (`1d8c17c`) |
+| Source branch / deployed commit | `agent-bot-ai-supply-chain-2026` @ **`83a0334`**. The `web/` app was deployed from this commit with `vercel deploy --prod`; the production bundle is `index-BIsiB2fS.js`, identical to a local clean build. Later commits change docs only |
 | Vercel project | `agent-task-cost-2026` (CLI deploy, not Git-linked; redeploy from `web/` with `npx vercel deploy --prod`) |
 | Builder | Claude Code (Build agent) |
 | Scene rationale (Thai) | [`06_SCENE_RATIONALE` Google Doc](https://docs.google.com/document/d/1XW-nIOzjQMfFJXRVvyGaUOGbS5YXT0O1u3RhU6THfs4/edit) in the owner Drive folder. Rebuilt after QA-001 with post-fix production screenshots: 8 scenes, the palette comparison, and 2 QA-001 departure frames. The earlier version is in Drive trash |
@@ -129,6 +129,16 @@ A mouse click could start a transition with a `requestAnimationFrame` timestamp 
   - The bars fade in the same frames.
   - Reproduce with `node web/scripts/departure.mjs <url> <dir> 5 1280 720 [--reduced]`.
 - **Regression:** `interact.mjs` on production gives 51 PASS, 0 FAIL. The full route was re-captured at 1920×1080 into [docs/screenshots/](docs/screenshots/). Settled scenes are unchanged except the slightly lighter S6 platform.
+
+### QA-002: S5 → S6 camera passed under the S6 platform (fixed in `83a0334`)
+
+- **Cause:** the camera rose straight through the space under the S6 platform, so its unlit underside filled the frame (about 1.4 s in normal motion, 350 ms in reduced motion). The QA-001 glow did not help.
+- **Fix** (`web/src/main.js`):
+  - The camera stays in front of the platform (`VIA.S6`) and rises above its height before turning to the gate. A `TARGET_VIA` look-at path follows the grid line up the pylon and across the platform top.
+  - The platform is thicker, with a support tower under its front corner. An accent-coloured riser climbs the tower to the gate, so the ascent always has a subject. It fades to a neutral trace once the task reaches the gate. The E0 trace passes along the same route.
+  - Reduced motion keeps this unobstructed path (`RM_KEEPS_PATH`), only faster.
+- **Verification:** local dense scan (`web/scripts/scan.mjs`, a frame every ~70 ms, checked with `blank.py`) showed no dark or occluded frame in either motion mode. On production, `departure.mjs` frames at 150–1800 ms (1920×1080, 1280×720) and 80–500 ms (reduced) are in [docs/qa-fix/QA-002/](docs/qa-fix/QA-002/), with `labels-*.txt`. The QA-001 label fade is unchanged (0.47 at 900 ms, gone by 1.1 s). `interact.mjs` on production: 51 PASS, 0 FAIL. The full route was re-captured into [docs/screenshots/](docs/screenshots/).
+- **Not yet refreshed:** the Thai `06_SCENE_RATIONALE` Google Doc still shows the pre-QA-002 S6 screenshot (S6 platform is thicker, with a tower). Wording is unaffected.
 
 ## Known limits
 

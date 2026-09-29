@@ -1,0 +1,7 @@
+150 ["Global data centres · all workloads@1.00","Electricity use, TWh · IEA central case@1.00","485 TWh@1.00","2025@1.00","950 TWh@1.00","2030 · central case@1.00","Grid connection↑@0.42"]
+450 ["Global data centres · all workloads@1.00","Electricity use, TWh · IEA central case@1.00","485 TWh@1.00","2025@1.00","950 TWh@1.00","2030 · central case@1.00"]
+750 ["Global data centres · all workloads@0.89","Electricity use, TWh · IEA central case@0.89","485 TWh@0.89","2025@0.89","950 TWh@0.89","2030 · central case@0.89"]
+900 ["Global data centres · all workloads@0.50","Electricity use, TWh · IEA central case@0.50","485 TWh@0.50","2025@0.50","950 TWh@0.50","2030 · central case@0.50"]
+1100 []
+1400 []
+1800 []

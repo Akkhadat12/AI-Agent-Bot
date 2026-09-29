@@ -1,0 +1,4 @@
+80 ["Global data centres · all workloads@0.95","Electricity use, TWh · IEA central case@0.95","485 TWh@0.95","2025@0.95","950 TWh@0.95","2030 · central case@0.95"]
+200 ["Global data centres · all workloads@0.47","Electricity use, TWh · IEA central case@0.47","485 TWh@0.47","2025@0.47","950 TWh@0.47","2030 · central case@0.47"]
+350 []
+500 []
