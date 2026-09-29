@@ -9,7 +9,7 @@
 | Source branch / deployed commit | `agent-bot-ai-supply-chain-2026` @ **`c10af1f`**. The `web/` app was deployed from this commit with `vercel deploy --prod`; later commits change docs only |
 | Vercel project | `agent-task-cost-2026` (CLI deploy, not Git-linked; redeploy from `web/` with `npx vercel deploy --prod`) |
 | Builder | Claude Code (Build agent) |
-| Scene rationale (Thai) | [`06_SCENE_RATIONALE` Google Doc](https://docs.google.com/document/d/1HQQOKQWECoc-VZYH8nzLLU8WS_5fMa12-6dbzdd6BFM/edit) in the owner Drive folder. It has 8 published scene screenshots and the palette comparison embedded |
+| Scene rationale (Thai) | [`06_SCENE_RATIONALE` Google Doc](https://docs.google.com/document/d/1XW-nIOzjQMfFJXRVvyGaUOGbS5YXT0O1u3RhU6THfs4/edit) in the owner Drive folder. Rebuilt after QA-001 with post-fix production screenshots: 8 scenes, the palette comparison, and 2 QA-001 departure frames. The earlier version is in Drive trash |
 | Published screenshots | [docs/screenshots/](docs/screenshots/): settled `n-ID.jpg` and mid-transition `n-ID-mid.jpg`, 1920×1080, captured from the production URL |
 
 ## Implementation
