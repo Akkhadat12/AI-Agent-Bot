@@ -14,6 +14,8 @@
 
 Markdown เป็นเนื้อหาหลักที่แก้ไขได้ PDF เป็นสำเนาสำหรับอ่านบนโทรศัพท์ ชุดอ่านยังไม่ใช่ thesis ที่เจ้าของงานอนุมัติ หลังเจ้าของงานเลือกทิศทางเรื่องเล่า ผู้วิจัยจะอัปเดต `02` คู่เดิมและเพิ่ม `03_STORY_STRUCTURE.md`, `04_BUILD_WEB.md`, `05_QA.md` และภาพอ้างอิงจริงที่จำเป็นใน `references/` บน branch นี้
 
+**PDF บน Drive:** [ชุด 01](https://drive.google.com/file/d/1bRq4x7m5mo8UE1IAxu4Z16eatAm60LK4/view?usp=drivesdk) · [ชุด 02](https://drive.google.com/file/d/16SeZDykKJ0cQb3l3Qokgx3zP5agkqF7I/view?usp=drivesdk)
+
 ## สถานะของงานเก่าใน repository
 
 Repository นี้เคยใช้สำหรับเรื่อง Agent Bot อีกหัวข้อหนึ่ง งานเดิมอยู่ในประวัติ `main` และมีเว็บเก่าบน branch `cursor/agent-bot-web-7739` ที่รายงาน URL `https://bots-vs-agents-2026.vercel.app` การเปิด branch ใหม่นี้และแทนเอกสารเก่าเฉพาะ branch ใหม่นี้ช่วยไม่ให้ข้อมูลเรื่องเก่าถูกเข้าใจว่าเป็นหลักฐานหรือบรีฟปัจจุบัน **URL เว็บเก่าไม่ใช่เว็บของงานวิจัยใหม่นี้**

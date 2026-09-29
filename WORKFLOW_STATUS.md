@@ -5,7 +5,7 @@
 - **Approved scope:** ห่วงโซ่มูลค่า AI ทั้งระบบและโครงสร้างพื้นฐาน: ชิป คลาวด์ ดาต้าเซ็นเตอร์ เครือข่าย พลังงาน
 - **Approved thesis:** ยังไม่มี — รอเจ้าของงานเลือกหลังอ่าน `01` และ `02`
 - **Stage:** `PLANNING`
-- **Last verified commit / date:** จะบันทึกหลังชุดอ่านและ PDF พร้อมและตรวจแล้ว
+- **Last verified reading-pack commit / date:** [`e28e08c32380febb3c8a8e79360bc5a0e7f0812f`](https://github.com/Akkhadat12/AI-Agent-Bot/commit/e28e08c32380febb3c8a8e79360bc5a0e7f0812f) / 29 กันยายน 2026
 - **Current public build URL:** ยังไม่มีสำหรับงานใหม่นี้
 - **Reading pack:** [01_KNOWLEDGE_SUMMARY.md](01_KNOWLEDGE_SUMMARY.md) · [01_KNOWLEDGE_SUMMARY.pdf](01_KNOWLEDGE_SUMMARY.pdf) · [02_RESEARCH_AND_ANALYSIS.md](02_RESEARCH_AND_ANALYSIS.md) · [02_RESEARCH_AND_ANALYSIS.pdf](02_RESEARCH_AND_ANALYSIS.pdf)
 - **Owner reading folder:** https://drive.google.com/drive/folders/1CBG-OOusgdXWSvLjtT3cMSCJx0yCTYU9
