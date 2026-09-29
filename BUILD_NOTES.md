@@ -9,7 +9,7 @@
 | Source branch / deployed commit | `agent-bot-ai-supply-chain-2026` @ `1d8c17c` (the `web/` app was deployed from this commit with `vercel deploy --prod`; later commits change docs only) |
 | Vercel project | `agent-task-cost-2026` (CLI deploy, not Git-linked; redeploy from `web/` with `npx vercel deploy --prod`) |
 | Builder | Claude Code (Build agent) |
-| Scene rationale (Thai) | `06_SCENE_RATIONALE` Google Doc in the owner Drive folder. The link is in [WORKFLOW_STATUS.md](WORKFLOW_STATUS.md) |
+| Scene rationale (Thai) | [`06_SCENE_RATIONALE` Google Doc](https://docs.google.com/document/d/1HQQOKQWECoc-VZYH8nzLLU8WS_5fMa12-6dbzdd6BFM/edit) in the owner Drive folder. It has 8 published scene screenshots and the palette comparison embedded |
 | Published screenshots | [docs/screenshots/](docs/screenshots/): settled `n-ID.jpg` and mid-transition `n-ID-mid.jpg`, 1920×1080, captured from the production URL |
 
 ## Implementation
