@@ -5,8 +5,8 @@
 | Item | Value |
 |---|---|
 | Public production URL | **https://agent-task-cost-2026.vercel.app** |
-| Deployment | Vercel production `dpl_2GKJ2FM93uUXZrrxK9at26w5UW6X`, READY, 29 September 2026 |
-| Source branch / deployed commit | `agent-bot-ai-supply-chain-2026` @ `1d8c17c` (the `web/` app was deployed from this commit with `vercel deploy --prod`; later commits change docs only) |
+| Deployment | Vercel production `dpl_GqwkRKjoN5FBN8WqNBCXz5z5CHTB`, READY, 29 September 2026 (QA-001 fix). The first deployment was `dpl_2GKJ2FM93uUXZrrxK9at26w5UW6X` from `1d8c17c` |
+| Source branch / deployed commit | `agent-bot-ai-supply-chain-2026` @ **`c10af1f`**. The `web/` app was deployed from this commit with `vercel deploy --prod`; later commits change docs only |
 | Vercel project | `agent-task-cost-2026` (CLI deploy, not Git-linked; redeploy from `web/` with `npx vercel deploy --prod`) |
 | Builder | Claude Code (Build agent) |
 | Scene rationale (Thai) | [`06_SCENE_RATIONALE` Google Doc](https://docs.google.com/document/d/1HQQOKQWECoc-VZYH8nzLLU8WS_5fMa12-6dbzdd6BFM/edit) in the owner Drive folder. It has 8 published scene screenshots and the palette comparison embedded |
@@ -114,6 +114,21 @@ Two directions were compared in the browser on C0, S4, the S4→S5 transition an
 ### Bug found and fixed during the build
 
 A mouse click could start a transition with a `requestAnimationFrame` timestamp earlier than the click. That gave a negative progress value and stopped the camera curve. Progress is now clamped to [0, 1]. The capture and interaction checks cover this case.
+
+## QA fixes
+
+### QA-001: S5 chart lost its labels while leaving (fixed in `c10af1f`)
+
+- **Cause:** every transition hid all labels at t = 0, while the S5 bars stayed large on screen for about a second.
+- **Fix:**
+  - Outgoing, non-target labels now stay in place and fade with the move, over 18–42% of the transition (0–60% under reduced motion). Target buttons are disabled immediately.
+  - When leaving S5, the chart panel, baseline and both bars fade over the same interval with the same curve, so the chart and its labels always leave together. A reset restores the chart.
+- **Also fixed** (found in the same frames, not reported by QA): the S5 → S6 camera passed below the S6 platform, whose unlit underside flashed as a black shape. The route now rises earlier, and the platform has a faint self-glow in its own colour (`#1C232C`).
+- **Production evidence** ([docs/qa-fix/QA-001/](docs/qa-fix/QA-001/)): frames at 150 / 450 / 750 / 900 / 1100 / 1400 / 1800 ms into S5 → S6 at 1920×1080 and 1280×720, plus 80–500 ms under reduced motion. Each folder has a `labels.txt` listing every visible label's opacity at each frame.
+  - All six chart labels always share one opacity: 1.00 → 0.90 → 0.46 → gone by 1.1 s.
+  - The bars fade in the same frames.
+  - Reproduce with `node web/scripts/departure.mjs <url> <dir> 5 1280 720 [--reduced]`.
+- **Regression:** `interact.mjs` on production gives 51 PASS, 0 FAIL. The full route was re-captured at 1920×1080 into [docs/screenshots/](docs/screenshots/). Settled scenes are unchanged except the slightly lighter S6 platform.
 
 ## Known limits
 
