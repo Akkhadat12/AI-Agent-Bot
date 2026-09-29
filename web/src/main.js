@@ -212,7 +212,32 @@ function targetButton(text, name, pos, sceneId, { anchor = [0.5, 0.5], parent = 
   return obj;
 }
 
+/* Outgoing scene labels fade with the camera move instead of vanishing
+ * at once; their targets are disabled immediately. */
+let departing = [];
+function beginDeparture(id) {
+  departing = labels.filter((l) => !l.target && l.scenes.includes(id));
+  for (const l of labels) {
+    if (l.target) {
+      l.el.classList.remove('on');
+      l.el.tabIndex = -1;
+    }
+  }
+  for (const l of departing) l.el.style.transition = 'none';
+}
+function departureOpacity(o) {
+  for (const l of departing) l.el.style.opacity = String(o);
+}
+function endDeparture() {
+  for (const l of departing) {
+    l.el.style.opacity = '';
+    l.el.style.transition = '';
+  }
+  departing = [];
+}
+
 function showLabels(id) {
+  endDeparture();
   for (const l of labels) {
     const on = l.scenes.includes(id);
     l.el.classList.toggle('on', on);
@@ -571,7 +596,8 @@ const IEA = [
 ];
 const chartPanel = box(10.2, 7.8, 0.12, mat(P.chartPanel, { roughness: 0.95 }), V(CHART.x, -1.35, CHART.z - 0.1));
 s5g.add(chartPanel);
-s5g.add(box(6.2, 0.05, 0.05, lineMat, V(CHART.x + 0.9, CHART.base, CHART.z + 0.05)));
+const chartBaseline = box(6.2, 0.05, 0.05, mat(P.line, { roughness: 0.6 }), V(CHART.x + 0.9, CHART.base, CHART.z + 0.05));
+s5g.add(chartBaseline);
 const bars = IEA.map((d, i) => {
   const h = (d.twh / 950) * CHART.maxH;
   const m = box(1.7, h, 0.3, i === 0 ? mat(P.bar, { roughness: 0.6 }) : mat(P.accent, { roughness: 0.55 }));
@@ -581,6 +607,17 @@ const bars = IEA.map((d, i) => {
   s5g.add(m);
   return m;
 });
+
+// The chart and its labels leave together (QA-001): never unlabelled bars.
+const chartMeshes = [chartPanel, chartBaseline, ...bars];
+for (const m of chartMeshes) m.material.transparent = true;
+function chartOpacity(o) {
+  for (const m of chartMeshes) {
+    m.material.opacity = o;
+    m.material.depthWrite = o > 0.99;
+    m.visible = o > 0.001;
+  }
+}
 
 reveal.S5 = (p) => {
   grow(conduit, window01(p, 0.05, 0.55));
@@ -601,7 +638,8 @@ targetButton('Grid connection<span class="arrow" aria-hidden="true">↑</span>',
 
 /* --- S6: permission gate and possible compute routes --- */
 const S6Y = 13;
-far.add(box(17, 0.2, 14, mat(P.platform), V(36.5, S6Y - 0.1, -41)));
+// Faint self-glow keeps the underside from reading as a black hole while the camera rises past it.
+far.add(box(17, 0.2, 14, mat(P.platform, { emissive: P.platform, emissiveIntensity: 0.9 }), V(36.5, S6Y - 0.1, -41)));
 const token = box(1.25, 1.7, 0.07, new THREE.MeshStandardMaterial({ map: record.material[4].map, roughness: 0.9 }), V(27.8, S6Y + 1.25, -40));
 token.rotation.y = 0.35;
 const tokenStand = box(0.7, 0.3, 0.4, structMat, V(27.8, S6Y + 0.15, -40));
@@ -708,7 +746,7 @@ const VIA = {
   S3: [V(11.5, -4.2, -14), V(12, -4.6, -25), V(8.6, -4.4, -16)],
   S4: [V(10, -3.2, -18.5)],
   S5: [V(27, -3.4, -32)],
-  S6: [V(40, 5, -34)],
+  S6: [V(41, 4, -30), V(37, 17, -27)],
   E0: [V(20, 21, -18), V(9, 12, 8)],
 };
 // Photos are full strength where they carry the scene, dimmed elsewhere.
@@ -749,7 +787,14 @@ function goTo(i) {
   const rm = reducedMotion.matches;
   const via = rm ? [] : VIA[id] || [];
   const posCurve = new THREE.CatmullRomCurve3([from.pos, ...via, shot.pos], false, 'centripetal');
-  showLabels('__none__');
+  const leaving = ORDER[cur];
+  beginDeparture(leaving);
+  // Outgoing labels (and, leaving S5, the chart itself) fade out together.
+  const depart = (t) => {
+    const o = 1 - easeInOut(window01(t, rm ? 0 : 0.18, rm ? 0.6 : 0.42));
+    departureOpacity(o);
+    if (leaving === 'S5') chartOpacity(o);
+  };
   document.body.dataset.state = `${ORDER[cur]}>${id}`;
   setHot(false);
   const dimFrom = { rack: rack.material.color.r, tpu: tpu.material.color.r };
@@ -766,6 +811,7 @@ function goTo(i) {
       camTarget.lerpVectors(from.target, shot.target, e);
       camera.lookAt(camTarget);
       dims(e);
+      depart(t);
     }, () => setState(i));
     return;
   }
@@ -776,6 +822,7 @@ function goTo(i) {
     camera.lookAt(camTarget);
     reveal[id](window01(t, 0.25, 1));
     dims(e);
+    depart(t);
   }, () => setState(i));
 }
 
@@ -789,6 +836,7 @@ function resetAll() {
   for (const id of ORDER) if (id !== 'C0') reveal[id](0);
   photoDim(rack, PHOTO_DIM.rack.C0);
   photoDim(tpu, PHOTO_DIM.tpu.C0);
+  chartOpacity(1);
   camera.position.copy(SHOTS.C0.pos);
   camTarget.copy(SHOTS.C0.target);
   camera.lookAt(camTarget);
